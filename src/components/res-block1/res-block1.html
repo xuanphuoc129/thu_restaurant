@@ -1,0 +1,110 @@
+<!-- Generated template for the ResBlock1Component component -->
+<div>
+  <div class="res-block1-b1">
+
+    <ion-row class="res-block1-row1">
+
+      <ion-col col-6>
+        <div class="res-block1-b1-left">
+          <!-- gioi thieu ve nha hang -->
+          <div class="res-infor">
+            Ngự tại một vị trí cực đẹp trong trung tâm thành phố.
+            Gây ấn tượng với thực khách bởi sự khác biệt trong không gian độc đáo,
+            Đạt giải thưởng A+ về kiến trúc nhà hàng
+            Sự lựa chọn tuyệt vời cho những ai tìm kiếm địa điểm thưởng thức bia tươi tuyệt hảo,
+            Giúp thực khách bỏ lại bên ngoài những lo toan mệt mỏi để cùng hòa mình vào không gian sôi động nơi đây
+          </div>
+        </div>
+      </ion-col>
+
+      <ion-col col-6>
+
+        <ion-row align-items-center class="res-block1-b1-right">
+
+          <ion-col col-1>
+            <button ion-button clear color="dark" (click)="onBackSlide()">
+              <ion-icon name="ios-arrow-back"></ion-icon>
+            </button>
+          </ion-col>
+
+          <ion-col col-10>
+            <ion-slides autoplay='1500' loop='true'>
+              <ion-slide>
+                <ion-row>
+                  <ion-col col-6 class="res-block1-b1-right-b1">
+                    <!-- <img src="{{url1}}" alt=""> -->
+                    <div class="background-img" [ngStyle]="{'background-image': 'url('+url1+')'}"></div>
+                  </ion-col>
+
+                  <ion-col col-6 class="res-block1-b1-right-b1">
+                    <!-- <img src="{{url2}}" alt=""> -->
+                    <div class="background-img" [ngStyle]="{'background-image': 'url('+url2+')'}"></div>
+                  </ion-col>
+                </ion-row>
+              </ion-slide>
+              <ion-slide>
+                <ion-row>
+                  <ion-col col-6 class="res-block1-b1-right-b1">
+                    <!-- <img src="{{url3}}" alt=""> -->
+                    <div class="background-img" [ngStyle]="{'background-image': 'url('+url3+')'}"></div>
+                  </ion-col>
+
+                  <ion-col col-6 class="res-block1-b1-right-b1">
+                    <!-- <img src="{{url4}}" alt=""> -->
+                    <div class="background-img" [ngStyle]="{'background-image': 'url('+url4+')'}"></div>
+                  </ion-col>
+                </ion-row>
+              </ion-slide>
+              <ion-slide>
+                <ion-row>
+                  <ion-col col-6 class="res-block1-b1-right-b1">
+                    <!-- <img src="{{url5}}" alt=""> -->
+                    <div class="background-img" [ngStyle]="{'background-image': 'url('+url5+')'}"></div>
+                  </ion-col>
+
+                  <ion-col col-6 class="res-block1-b1-right-b1">
+                    <!-- <img src="{{url6}}" alt=""> -->
+                    <div class="background-img" [ngStyle]="{'background-image': 'url('+url6+')'}"></div>
+                  </ion-col>
+                </ion-row>
+              </ion-slide>
+            </ion-slides>
+          </ion-col>
+
+          <ion-col col-1>
+            <button ion-button clear color="dark" (click)="onNextSlide()">
+              <ion-icon name="ios-arrow-forward"></ion-icon>
+            </button>
+          </ion-col>
+
+        </ion-row>
+
+      </ion-col>
+
+    </ion-row>
+
+
+    <ion-row class="res-block1-b2">
+      <ion-col  col-4 class="text-overlay">
+        <div class="showing-items animated fadeIn">
+          <span>Helo</span>
+        </div>
+        <div class="background-img" [ngStyle]="{'background-image':'url('+url7+')'}"></div>
+      </ion-col>
+      <ion-col col-4 class="text-overlay">
+        <div class="showing-items animated fadeIn">
+          <span>Helo</span>
+        </div>
+        <div class="background-img" [ngStyle]="{'background-image':'url('+url8+')'}"></div>
+      </ion-col>
+      <ion-col col-4 class="text-overlay">
+        <div class="showing-items animated fadeIn">
+          <span>Helo</span>
+        </div>
+        <div class="background-img" [ngStyle]="{'background-image':'url('+url9+')'}"></div>
+      </ion-col>
+
+    </ion-row>
+
+  </div>
+</div>

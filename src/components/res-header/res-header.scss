@@ -1,0 +1,61 @@
+res-header {
+  .res-header-left {
+    img {
+      max-width: 20%;
+    }
+  }
+
+  .res-right {
+    display: flex;
+    // justify-content: center;
+    // overflow: visible;
+
+    .res-menu-item {
+      margin: 0;
+      padding: 10px 30px;
+      color: white;
+      text-decoration: unset; // tắt gạch chân
+      position: relative; //Cố định vị trí của nó
+      //   background: rgba($color: #000000, $alpha: 0.8);
+
+      .drop-down {
+        position: absolute; //overlay 
+        top: 100%; //chiều cao cha
+        left: 0;
+        min-width: 200px; // k có width cố định
+        display: none;
+        font-size: 1.4rem;
+
+        .drop-down-items {
+          padding: 15px 40px;
+          white-space: nowrap;
+          background: rgba($color: black, $alpha: 0.8);
+          color: white;
+        }
+      }
+
+    }
+
+    .res-menu-item:hover {
+      .drop-down {
+        display: block;
+      }
+      background: rgba($color:white, $alpha: 0.6);
+      color: black;
+
+    }
+    
+  }
+
+  .menu-header-container {
+    background: rgba($color: black, $alpha: 0.8);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    font-size: 15px;
+  }
+
+}

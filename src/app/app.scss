@@ -14,3 +14,23 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.fixed {
+  position: fixed;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+.padding-20 {
+  padding: 20px;
+}
+
+.z-index-99 {
+  z-index: 99;
+}
+
+.btn-order {
+  height: 50px;
+}

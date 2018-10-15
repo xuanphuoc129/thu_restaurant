@@ -2,6 +2,7 @@ res-block1 {
   .res-block1-b1 {
     // height: 100vh;
     padding: 8px 4px;
+    margin: 15px;
   }
 
   .background-img {
@@ -12,29 +13,24 @@ res-block1 {
   }
 
   .res-infor {
-    color: black;
+    color: rgb(212, 248, 10);
     font-size: 20px;
-    transform: translate(0 -50%);
     width: 100%;
     text-align: center;
-    padding: 40px 40px 80px 40px;
     justify-content: center;
     align-items: center;
+    padding: 0 20px 0;
+    font-family:'';
   }
-
-  .col {
-    padding: 4px 8px;
-  }
-
   .text-overlay {
     position: relative;
     font-size: 1.4rem;
-    background: rgba($color: white, $alpha: 0.8);
+    background: rgba($color: black, $alpha: 0.8);
   }
     .showing-items {
       position: absolute;
-      background: rgba($color: white, $alpha: 0.8);
-      color: black;
+      background: rgba($color: black, $alpha: 0.8);
+    color: rgb(212, 248, 10);
       height: 100%;
       width: 100%;
       top: 0;
@@ -43,15 +39,30 @@ res-block1 {
       text-align: center;
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       display: none;
-      justify-content: center;
-      align-items: center;
       z-index: 99;
+      padding: 30px;
+      align-items: center;
+      justify-content: center;
+      flex-flow: column;
   }
   .text-overlay:hover {
-    // background: rgba($color:black, $alpha: 0.6);
-    color: white;
+    color: rgb(212, 248, 10);
     .showing-items{
       display: flex;
     }
+  }
+  .res-block1-b2{
+    margin: 15px;
+  }
+  .hover-time{
+    font-size: 20px;
+    font-family: 'Times New Roman';
+  }
+  .res-hover1{
+  }
+  .res-logo{
+    width: 30%;
+    text-align: center;
+    margin: auto;
   }
 }

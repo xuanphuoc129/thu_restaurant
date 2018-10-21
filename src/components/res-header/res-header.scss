@@ -7,16 +7,14 @@ res-header {
 
   .res-right {
     display: flex;
-    a{
-      max-height: 40px;
-    }
+    
     img{
       max-height: 40px;
     }
 
     .res-menu-item {
       margin: 0;
-      padding: 10px 30px;
+      padding: 15px 30px;
       color: white;
       text-decoration: unset; // tắt gạch chân
       position: relative; //Cố định vị trí của nó
@@ -44,11 +42,12 @@ res-header {
       .drop-down {
         display: block;
       }
+
       background: rgba($color:white, $alpha: 0.6);
       color: black;
 
     }
-    
+
   }
 
   .menu-header-container {
@@ -62,8 +61,11 @@ res-header {
     font-size: 15px;
   }
 
-  .top-left{
+  .res-logo {
+    max-height: 50px;
 
+    img {
+      max-height: 50px;
+    }
   }
-
 }

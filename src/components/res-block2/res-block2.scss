@@ -1,3 +1,29 @@
 res-block2 {
 
+  .background-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: calc(50vh - 40px);
+  }
+
+  .res-logo {
+    // height: 60px;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+  }
+
+  .res-inforfood {
+    color: rgb(212, 248, 10);
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .res-pineapple {
+    top: -50%;
+    right: 0;
+    max-width: 30%;
+    position: absolute;
+  }
 }

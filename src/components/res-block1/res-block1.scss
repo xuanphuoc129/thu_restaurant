@@ -1,57 +1,95 @@
 res-block1 {
   .res-block1-b1 {
     // height: 100vh;
-    padding: 8px 4px;
+    // padding: 8px 4px;
+    // margin: 15px;
+  }
+
+  .res-block1-b1-left {
+    .big-font {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .res-infor {
+      // color: rgb(212, 248, 10);
+      font-size: 18px;
+      width: 100%;
+      text-align: left;
+      padding: 20px 16px 40px 0;
+      white-space: pre-line;
+      line-height: 26px;
+    }
+
   }
 
   .background-img {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: calc(50vh - 40px);
+    height: calc(60vh - 40px);
   }
 
-  .res-infor {
-    color: black;
-    font-size: 20px;
-    transform: translate(0 -50%);
-    width: 100%;
-    text-align: center;
-    padding: 40px 40px 80px 40px;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .col {
-    padding: 4px 8px;
-  }
 
   .text-overlay {
     position: relative;
     font-size: 1.4rem;
-    background: rgba($color: white, $alpha: 0.8);
   }
-    .showing-items {
-      position: absolute;
-      background: rgba($color: white, $alpha: 0.8);
-      color: black;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: 0;
-      font-size: 40px;
-      text-align: center;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 99;
+
+  .showing-items {
+    position: absolute;
+    background: rgba($color: black, $alpha: 0.8);
+    color: rgb(212, 248, 10);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-size: 40px;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: none;
+    z-index: 99;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
   }
+
   .text-overlay:hover {
-    // background: rgba($color:black, $alpha: 0.6);
-    color: white;
-    .showing-items{
+    color: rgb(212, 248, 10);
+
+    .showing-items {
       display: flex;
     }
   }
+
+  .res-block1-b2 {
+    // margin: 15px;
+
+  }
+
+  .hover-time {
+    font-size: 20px;
+    font-family: 'Times New Roman';
+  }
+
+  .res-hover1 {}
+
+  .res-logo {
+    width: 30%;
+    text-align: center;
+    margin: auto;
+  }
+
+  .res-block1-b1-right-b1 {
+    &.left {
+      padding-left: 0;
+    }
+
+    &.right {
+      padding-right: 0;
+    }
+  }
+
+
 }

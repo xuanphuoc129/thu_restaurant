@@ -8,18 +8,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage(
+  {
+    name: "EntertainmentPage",
+    segment: "entertainment"
+  }
+)
 @Component({
   selector: 'page-entertainment',
   templateUrl: 'entertainment.html',
 })
 export class EntertainmentPage {
 
+  imageUrl: string = "./assets/imgs/res-1.jpg";
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EntertainmentPage');
+    // console.log('ionViewDidLoad EntertainmentPage');
   }
 
 }

@@ -17,6 +17,12 @@
 .fixed {
   position: fixed;
 }
+.p-relative{
+  position: relative;
+}
+.p-absolute{
+  position: absolute;
+}
 
 .bottom-right {
   bottom: 0;
@@ -37,4 +43,25 @@
 .top-right{
   top:50px;
   right: 10px;
+}
+.bg-image{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// =================color=====================
+.white-color{
+  color: white;
+}
+
+
+
+// ============font-size===============
+.font-big{
+  font-size: 30px;
+}
+
+.font-body{
+  font-size: 20px;
 }

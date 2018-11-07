@@ -1,36 +1,58 @@
 res-block1 {
   .res-block1-b1 {
     // height: 100vh;
-    padding: 8px 4px;
-    margin: 15px;
+    // padding: 8px 4px;
+    // margin: 15px;
+  }
+  .res-name{
+    font-family: 'Times New Roman';
+    font-size: 40px;
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+    margin: 100px;
+  
+  }
+  .res-block1-b1-right{
+    margin-top: 50px;
+    padding: 50px 10px;
   }
 
   .background-img {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: calc(70vh - 60px);
+  }
+  .background-img-b2{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     height: calc(50vh - 40px);
+    margin: 30px;
+    
   }
 
   .res-infor {
-    color: rgb(212, 248, 10);
+    color:black;
     font-size: 20px;
-    width: 100%;
+    width: 80%;
     text-align: center;
     justify-content: center;
-    align-items: center;
-    padding: 0 20px 0;
-    font-family:'';
+    // padding: 10px 50px ;
+    margin:auto;  
   }
   .text-overlay {
     position: relative;
     font-size: 1.4rem;
-    background: rgba($color: black, $alpha: 0.8);
+    background: rgba($color: white, $alpha: 0.8);
+    margin-top: 100px;
+    padding: center
   }
     .showing-items {
       position: absolute;
-      background: rgba($color: black, $alpha: 0.8);
-    color: rgb(212, 248, 10);
+      background: rgba($color: white, $alpha: 0.8);
+    color: black;
       height: 100%;
       width: 100%;
       top: 0;
@@ -46,13 +68,13 @@ res-block1 {
       flex-flow: column;
   }
   .text-overlay:hover {
-    color: rgb(212, 248, 10);
+    color:black;
     .showing-items{
       display: flex;
     }
   }
   .res-block1-b2{
-    margin: 15px;
+    // margin: 15px;
   }
   .hover-time{
     font-size: 20px;

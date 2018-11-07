@@ -1,122 +1,98 @@
 <!-- Generated template for the ResBlock1Component component -->
 <div>
   <div class="res-block1-b1">
-
-    <ion-row align-items-center class="res-block1-row1">
-
-      <ion-col col-6>
-        <div class="res-block1-b1-left">
-          <!-- gioi thieu ve nha hang -->
-          <div class="res-logo">
-            <img src="./assets/imgs/res-pineapple-stand.png" alt="">
-          </div>
-          <div class="res-infor">
-            Ngự tại một vị trí cực đẹp trong trung tâm thành phố.
-            Sự lựa chọn tuyệt vời cho những ai tìm kiếm địa điểm thưởng thức những món ăn tuyệt hảo,
-            Giúp thực khách bỏ lại bên ngoài những lo toan mệt mỏi để cùng hòa mình vào không gian nơi đây
-          </div>
+    <div class="res-block1-b1-left">
+      <div class="res-name">
+        Chào mừng đến với Delicious
+      </div>
+      <div class="res-infor">
+        Ngự tại Số 1 Tràng Thi- địa điểm tuyệt vời của thành phố.
+        Sự lựa chọn tuyệt vời cho những buổi hẹn hò lãng mạng,
+        hay những bữa tiệc gia đình tuyệt hảo. 
+        Đến với Delicious chắc chắn sẽ khiến bạn hài lòng.
         </div>
+    </div>
+    <ion-row align-items-center class="res-block1-b1-right">
+
+      <ion-col col-1>
+        <button ion-button clear color="dark" (click)="onBackSlide()">
+          <ion-icon name="ios-arrow-back"></ion-icon>
+        </button>
       </ion-col>
 
-      <ion-col col-6>
+      <ion-col col-10>
+        <ion-slides autoplay='2000' loop='true'>
+          <ion-slide>
+            <ion-row>
+              <ion-col col-6 class="res-block1-b1-right-b1">
+                <div class="background-img" [ngStyle]="{'background-image': 'url('+url+')'}"></div>
+              </ion-col>
 
-        <ion-row align-items-center class="res-block1-b1-right">
+              <ion-col col-6 class="res-block1-b1-right-b1">
+                <div class="background-img" [ngStyle]="{'background-image': 'url('+url1+')'}"></div>
+              </ion-col>
+            </ion-row>
+          </ion-slide>
+          <ion-slide>
+            <ion-row>
+              <ion-col col-6 class="res-block1-b1-right-b1">
+                <div class="background-img" [ngStyle]="{'background-image': 'url('+url2+')'}"></div>
+              </ion-col>
 
-          <ion-col col-1>
-            <button ion-button clear color="dark" (click)="onBackSlide()">
-              <ion-icon name="ios-arrow-back"></ion-icon>
-            </button>
-          </ion-col>
-
-          <ion-col col-10>
-            <ion-slides autoplay='1500' loop='true'>
-              <ion-slide>
-                <ion-row>
-                  <ion-col col-6 class="res-block1-b1-right-b1">
-                    <div class="background-img" [ngStyle]="{'background-image': 'url('+url1+')'}"></div>
-                  </ion-col>
-
-                  <ion-col col-6 class="res-block1-b1-right-b1">
-                    <div class="background-img" [ngStyle]="{'background-image': 'url('+url2+')'}"></div>
-                  </ion-col>
-                </ion-row>
-              </ion-slide>
-              <ion-slide>
-                <ion-row>
-                  <ion-col col-6 class="res-block1-b1-right-b1">
-                    <div class="background-img" [ngStyle]="{'background-image': 'url('+url3+')'}"></div>
-                  </ion-col>
-
-                  <ion-col col-6 class="res-block1-b1-right-b1">
-                    <div class="background-img" [ngStyle]="{'background-image': 'url('+url4+')'}"></div>
-                  </ion-col>
-                </ion-row>
-              </ion-slide>
-              <ion-slide>
-                <ion-row>
-                  <ion-col col-6 class="res-block1-b1-right-b1">
-                    <div class="background-img" [ngStyle]="{'background-image': 'url('+url5+')'}"></div>
-                  </ion-col>
-
-                  <ion-col col-6 class="res-block1-b1-right-b1">
-                    <div class="background-img" [ngStyle]="{'background-image': 'url('+url6+')'}"></div>
-                  </ion-col>
-                </ion-row>
-              </ion-slide>
-            </ion-slides>
-          </ion-col>
-
-          <ion-col col-1>
-            <button ion-button clear color="dark" (click)="onNextSlide()">
-              <ion-icon name="ios-arrow-forward"></ion-icon>
-            </button>
-          </ion-col>
-
-        </ion-row>
-
+              <ion-col col-6 class="res-block1-b1-right-b1">
+                <div class="background-img" [ngStyle]="{'background-image': 'url('+url3+')'}"></div>
+              </ion-col>
+            </ion-row>
+          </ion-slide>
+        </ion-slides>
       </ion-col>
 
+      <ion-col col-1>
+        <button ion-button clear color="dark" (click)="onNextSlide()">
+          <ion-icon name="ios-arrow-forward"></ion-icon>
+        </button>
+      </ion-col>
     </ion-row>
 
-
     <ion-row class="res-block1-b2">
-      <ion-col  col-4 class="text-overlay">
+      <div class="res-name">
+        Chương trình khuyến mãi đặc biệt
+      </div>
+      <div class="res-infor">
+          Là 1 trong những Nhà hàng hàng đầu Hà Nội, Delicious đem đến cho khách hàng các sự kiện thường niên và những món ăn hảo hạng hàng đầu với những trải nghiệm vị và dịch vụ tuyệt vời.
+      </div>
+      <ion-col col-4 class="text-overlay">
         <div class="showing-items animated fadeIn">
           <div class="res-hover1">
-          Gala Sinh Nhật
+            Gala Sinh Nhật
           </div>
           <div class="hover-time">
             Sinh nhật của bạn, vinh hạnh của chúng tôi
           </div>
-          <!-- <div class="btn-order">
-            <button ion-button color="danger" (click)="onClickOrder()" class="btn-order">
-              Đặt bàn sinh nhật
-            </button>
-          </div> -->
         </div>
-        <div class="background-img" [ngStyle]="{'background-image':'url('+url7+')'}"></div>
+        <div class="background-img-b2" [ngStyle]="{'background-image':'url('+url7+')'}"></div>
       </ion-col>
       <ion-col col-4 class="text-overlay">
         <div class="showing-items animated fadeIn">
           <div class="res-hover1">
-              Black Tuesday
-            </div>
-            <div class="hover-time">
-              Tặng món mỗi thứ 3, hàng tuần
-            </div>
+            Black Tuesday
+          </div>
+          <div class="hover-time">
+            Tặng món mỗi thứ 3 hàng tuần
+          </div>
         </div>
-        <div class="background-img" [ngStyle]="{'background-image':'url('+url8+')'}"></div>
+        <div class="background-img-b2" [ngStyle]="{'background-image':'url('+url8+')'}"></div>
       </ion-col>
       <ion-col col-4 class="text-overlay">
         <div class="showing-items animated fadeIn">
           <div class="res-hover1">
             Ladies Night
-            </div>
-            <div class="hover-time">
-              Tặng 1 cốc bia cho bàn có 4 khách nữ trở lên
-            </div>
+          </div>
+          <div class="hover-time">
+            Tặng 1 salad cho bàn có 4 khách nữ trở lên
+          </div>
         </div>
-        <div class="background-img" [ngStyle]="{'background-image':'url('+url9+')'}"></div>
+        <div class="background-img-b2" [ngStyle]="{'background-image':'url('+url9+')'}"></div>
       </ion-col>
 
     </ion-row>

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the OrderPopupPage page.
+ * Generated class for the EntertainmentPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,20 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-order-popup',
-  templateUrl: 'order-popup.html',
+  selector: 'page-entertainment',
+  templateUrl: 'entertainment.html',
 })
-export class OrderPopupPage {
-  [x: string]: any;
+export class EntertainmentPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad OrderPopupPage');
+    console.log('ionViewDidLoad EntertainmentPage');
   }
-  onClicksend(){
-    let popup = this.modalCtrl.create("OrderPopupPage"); // tao page modal.(ten page . ts) 
-    popup.present();
-  }
+
 }

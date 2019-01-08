@@ -1,0 +1,46 @@
+page-entertainment {
+  // ion-content.content {
+  //   background-image: url("../assets/imgs/res-bl2.2.jpg");
+  //   background-size: cover;
+  //   background-position: center;
+  //   background-repeat: no-repeat;
+  // }
+
+  
+  .res-enter-block-1{
+    .cheft-image {
+      height: 100vh;
+  
+      .cheft-text {
+        left: 50%;
+        top: 50%;
+        min-width: 300px;
+        transform: translate(-50%, -50%);
+  
+        .description {
+          margin-top: 10px;
+        }
+        .delay{
+          animation-delay: 0.5s;
+        }
+      }
+    }
+  
+    .animated {
+      animation-duration: 1s;
+    }
+  
+    .teacher-text {
+      right: 10px;
+      top: 30%;
+    }
+  }
+  .res-enter-block-2{
+    height: calc(100vh - 50px);
+    .teacher{
+      height: 400px;
+      width: 90%;
+      margin: auto;
+    }
+  }
+}

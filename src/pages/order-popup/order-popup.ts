@@ -14,6 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'order-popup.html',
 })
 export class OrderPopupPage {
+  [x: string]: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -21,5 +22,8 @@ export class OrderPopupPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrderPopupPage');
   }
-
+  onClicksend(){
+    let popup = this.modalCtrl.create("OrderPopupPage"); // tao page modal.(ten page . ts) 
+    popup.present();
+  }
 }

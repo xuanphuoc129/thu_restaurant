@@ -17,8 +17,11 @@
 .fixed {
   position: fixed;
 }
-.a1-relative{
+.p-relative{
   position: relative;
+}
+.p-absolute{
+  position: absolute;
 }
 
 .top-right {
@@ -36,4 +39,29 @@
 
 .btn-order {
   height: 50px;
+}
+.top-right{
+  top:50px;
+  right: 10px;
+}
+.bg-image{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// =================color=====================
+.white-color{
+  color: white;
+}
+
+
+
+// ============font-size===============
+.font-big{
+  font-size: 30px;
+}
+
+.font-body{
+  font-size: 20px;
 }

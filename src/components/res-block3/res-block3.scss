@@ -1,6 +1,6 @@
 res-block3 {
   .res-block3{
-    margin: 15px;
+    // margin: 15px;
   }
 .res-infor{
     height: 500px;
@@ -10,7 +10,7 @@ res-block3 {
       font-size: 20px;
       width: 100%;
       height: 100%;
-      padding: 80px 40px 80px 40px;
+      // padding: 80px 40px 80px 40px;
       font-family:'Courier New';
 
 }
@@ -20,9 +20,11 @@ res-block3 {
   background-position: center;
   background-size:cover; 
   height: 400px;
+  width: 100vw;
 } 
-.res-name{
-  background-image: url("../assets/imgs/res-chef-toque.png");
-  height: 100%;
+.img-chef-toque{
+  top: 0;
+  left: 0;
+  height:70px ;
 }
 }

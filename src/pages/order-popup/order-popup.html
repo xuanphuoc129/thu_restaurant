@@ -1,18 +1,38 @@
-<!--
-  Generated template for the OrderPopupPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>order-popup</ion-title>
+    <ion-title>Đặt Bàn Sự Kiện</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-list class="list-input">
+    <ion-item>
+      <ion-label color="dark">Tên </ion-label>
+      <ion-input placeholder="Text-Input"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="dark"> Số điện thoại </ion-label>
+      <ion-input placeholder="Text-tel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="dark"> Email </ion-label>
+      <ion-input placeholder="Text-email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="dark" type="number"> Số người </ion-label>
+      <ion-input type="number" placeholder="Number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="dark"> Ghi chú </ion-label>
+      <ion-textarea placeholder="Text-note"></ion-textarea>
+    </ion-item>
+    <div class="btn-send">
+      <button ion-button icon-bottom (click)="onClicksend()" class="btn-send"> Gửi </button>
+    </div>
+  </ion-list>
 
 </ion-content>

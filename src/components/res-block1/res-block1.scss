@@ -4,68 +4,78 @@ res-block1 {
     // padding: 8px 4px;
     // margin: 15px;
   }
-
-  .res-block1-b1-left {
-    .big-font {
-      font-size: 40px;
-      margin-bottom: 20px;
-    }
-
-    .res-infor {
-      // color: rgb(212, 248, 10);
-      font-size: 18px;
-      width: 100%;
-      text-align: left;
-      padding: 20px 16px 40px 0;
-      white-space: pre-line;
-      line-height: 26px;
-    }
-
+  .res-name{
+    font-family: 'Times New Roman';
+    font-size: 40px;
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+    margin: 100px;
+  
+  }
+  .res-block1-b1-right{
+    margin-top: 50px;
+    padding: 50px 10px;
   }
 
   .background-img {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: calc(60vh - 40px);
+    height: calc(70vh - 60px);
+  }
+  .background-img-b2{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: calc(50vh - 40px);
+    margin: 30px;
+    
   }
 
-
+  .res-infor {
+    color:black;
+    font-size: 20px;
+    width: 80%;
+    text-align: center;
+    justify-content: center;
+    // padding: 10px 50px ;
+    margin:auto;  
+  }
   .text-overlay {
     position: relative;
     font-size: 1.4rem;
+    background: rgba($color: white, $alpha: 0.8);
+    margin-top: 100px;
+    padding: center
   }
-
-  .showing-items {
-    position: absolute;
-    background: rgba($color: black, $alpha: 0.8);
-    color: rgb(212, 248, 10);
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    font-size: 40px;
-    text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    display: none;
-    z-index: 99;
-    padding: 30px;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column;
+    .showing-items {
+      position: absolute;
+      background: rgba($color: white, $alpha: 0.8);
+    color: black;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      font-size: 40px;
+      text-align: center;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      display: none;
+      z-index: 99;
+      padding: 30px;
+      align-items: center;
+      justify-content: center;
+      flex-flow: column;
   }
 
   .text-overlay:hover {
-    color: rgb(212, 248, 10);
-
-    .showing-items {
+    color:black;
+    .showing-items{
       display: flex;
     }
   }
-
-  .res-block1-b2 {
+  .res-block1-b2{
     // margin: 15px;
-
   }
 
   .hover-time {

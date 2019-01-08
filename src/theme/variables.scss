@@ -86,3 +86,11 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+@font-face {
+  font-family: "helveticaneuelight";
+  src: url("../assets/fonts/helveticaneuelight.woff") format("woff"), /* Modern Browsers */
+  url("../assets/fonts/helveticaneuelight.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}

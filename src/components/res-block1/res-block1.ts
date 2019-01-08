@@ -15,16 +15,17 @@ import { Slides, ModalController } from 'ionic-angular';
 })
 export class ResBlock1Component {
   @ViewChild(Slides) myslide: Slides;
+  text: string;
   url: string = "./assets/imgs/res-table1.jpeg";
   url1: string = "./assets/imgs/res-table2.jpeg";
-  url2: string = "./assets/imgs/res-1.jpg";
-  url3: string = "./assets/imgs/res-block2-b4.jpg";
+  url2: string = "./assets/imgs/res-table3.gif";
+  url3: string = "./assets/imgs/res-table4.jpg";
   url4: string = "./assets/imgs/res-img4.jpg";
   url5: string = "./assets/imgs/res-bl2.1.jpg";
   url6: string = "./assets/imgs/res-bl2.2.jpg";
-  url7: string = "./assets/imgs/res-bl2.3.jpg";
-  url8: string = "./assets/imgs/res-bl2.4.jpg";
-  url9: string = "./assets/imgs/res-bl2.5.jpg";
+  url7: string = "./assets/imgs/res-birthdayn.png";// birthday
+  url8: string = "./assets/imgs/menubonus.png";// blackTuesday
+  url9: string = "./assets/imgs/res-bl1-ladies.png";// ladies
 
   slides : Array<any> = [];
   constructor(

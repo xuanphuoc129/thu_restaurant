@@ -1,16 +1,53 @@
 page-menu {
-.background-img{
-    height: 100vh;
-    width: 100vw;
-    background-image: url("../assets/imgs/bg-menu.jpg");
+  ion-content.content {
+    background-color: black;
+    margin-top: 50px;
+  }
+  .title{
+    color: yellow;
+    padding: 20px;
+    font-size: 15px;
+    &.selected{
+      color: white;
+      font-size: 20px; 
+    }
+  }
+  .itemname{
+    color: white;
+    font-size: 15px;
+  }
+  .description{
+    color: gray;
+    margin-top: 10px;
+  }
+  .detail{
+    padding: 20px;
+    width: 500px;
+  }
+  .itemname:hover{
+    color: yellow;
+  }
+  .col-title{
+    left: 50px;
+  }
+  .res-menu{
+height: 100vh;   
+    // width: 70%;
+    // margin: auto;
+  }
+  .res-food-detail{
+    height:100vh ;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .res-menu-food{
+    background: white;
+  }
+  .background-food-img{
+    height: 500px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
-}  
-.res-button{
-    background: url("..//assets/imgs/shrimp-button") 0 0;
-    width: 100%;
-    height: 100%;
-} 
+  }
 }

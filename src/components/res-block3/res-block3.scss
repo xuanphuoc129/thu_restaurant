@@ -7,41 +7,28 @@ res-block3 {
     color: black;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
-    padding: 30px;
-  }
-  .col-content{
-    margin-top: 50px;
-  }
-
-  .res-img {
-    background-image: url("../assets/imgs/res-bl3.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    // height: 400px;
-    // width: 100vw;
-    margin-top: 80px;
-  }
-
-  .img-chef-toque {
-    top: 0;
-    left: 0;
-    height: 70px;
-  }
-
-  .res-name {
-    text-transform: uppercase;
-    font-size: 40px;
-    font-family: 'Times New Roman';
-    margin-top: 30px;
+    padding: 20px;
+    .res-name {
+      text-transform: uppercase;
+      font-size: 3rem;
+      font-family: 'Times New Roman';
+      margin-top: 30px;
+      text-align: center;
+      font-weight: bold;
+      padding: 0 6px;
+    }
   }
 
   .main-content {
-    background-image: url("../assets/imgs/res-logo-yellow.png");
+    background-image: url("../assets/imgs/background-romantic.jpg");
+    // background-image: url("../assets/imgs/res-logo-yellow.png");
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
-    // height: calc(40vh - 40px);
-    padding: 80px;
+    margin-top: 40px;
+    padding-right: 30%;
+  }
+  .overlay-bg{
+    min-height: 80vh;
   }
 }

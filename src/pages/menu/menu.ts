@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Item, Slides } from 'ionic-angular';
 import { Http } from "@angular/http";
 import 'rxjs/add/operator/map';
+import { AppModuleProvider } from '../../providers/app-module/app-module';
 
 /**
  * Generated class for the MenuPage page.
@@ -58,9 +59,11 @@ export class MenuPage {
   arrayImages: Array<string> = [];
 
   mMenuSelect: Menuitems = new Menuitems(); // khởi tạo giá trị mặc định cho biến
-
+  mCurrentIndex: number = 0;
   constructor(
+    public mAppModule: AppModuleProvider,
     public http: Http,
+
     public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -71,7 +74,7 @@ export class MenuPage {
       "../assets/imgs/6.jpg",
       "../assets/imgs/7.jpg",
       "../assets/imgs/2.jpg",
-       "../assets/imgs/res-img2.jpg",
+      "../assets/imgs/res-img2.jpg",
       "../assets/imgs/n-7.jpg",
       "../assets/imgs/p-7.jpg",
       "../assets/imgs/ri-7.jpg",
@@ -115,6 +118,31 @@ export class MenuPage {
 
   onClickMenuItems(item) {
     this.mMenuSelect = item;
+  }
+
+  onClickDot(number){
+    this.mCurrentIndex = number;
+    let divID = "rowFoodID";
+    let element = document.getElementById(divID);
+    if(element){
+      let maxScrollLeft = element.scrollWidth - element.clientWidth;
+
+      if(this.mCurrentIndex == 2){
+        console.log(maxScrollLeft);
+        
+        this.mAppModule.getScrollController().doScrollLeft(divID,maxScrollLeft);
+      }else{
+        let distance = this.mCurrentIndex * screen.width;
+        console.log(distance);
+        
+        this.mAppModule.getScrollController().doScrollLeft(divID,distance);
+      }
+    }else{
+      console.log("nothing");
+      
+    }
+   
+
   }
 
 }

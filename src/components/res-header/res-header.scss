@@ -32,7 +32,14 @@ res-header {
           padding: 15px 40px;
           white-space: nowrap;
           background: rgba($color: black, $alpha: 0.8);
-          color: white;
+          a{
+            color: white;
+            text-decoration: unset; 
+          }
+          a:hover{
+            opacity: 1;
+            color: map-get($map: $colors, $key: yellow);
+          }
         }
       }
 

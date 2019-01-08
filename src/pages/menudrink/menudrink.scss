@@ -1,36 +1,44 @@
 page-menudrink {
-.title{
+  .title {
     color: black;
     padding: 20px;
     font-size: 20px;
-    &.selected{
-        color: black;
-        font-size: 30px;
+
+    &.selected {
+      color: black;
+      font-size: 30px;
     }
-}
-.itemname{
+  }
+
+  .itemname {
     color: black;
     font-size: 15px;
-}
-.description{
+  }
+
+  .description {
     color: gray;
     margin-top: 10px;
-}
-.detail{
+  }
+
+  .detail {
     padding: 20px;
     width: 500px;
-}
-.itemname:hover{
-    color:orange;
-}
-.col-title{
-    left:50px;
-}
-.img-background{
-    background-image: url("./assets/imgs/wine.jpeg");
+  }
+
+  .itemname:hover {
+    color: orange;
+  }
+
+  .col-title {
+    left: 50px;
+  }
+
+  .img-background {
+    background-image: url("../assets/imgs/drink-banner.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
+    height: 60vh;
+  }
 }
-} 

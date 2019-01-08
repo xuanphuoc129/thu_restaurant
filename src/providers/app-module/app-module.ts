@@ -5,6 +5,7 @@ import { Http } from '@angular/http';
 import { AlertController } from 'ionic-angular';
 import { RestaurantSFSConnector } from '../smartfox/SFSConnector';
 import 'rxjs/add/operator/map';
+import { ScrollController } from '../core/common/scroll-controller';
 
 /*
   Generated class for the AppModuleProvider provider.
@@ -15,12 +16,17 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AppModuleProvider {
   private mAppConfig: Config;
-  
+  private mScrollController: ScrollController = new ScrollController();
+
   constructor(
     public mAlertController: AlertController,
     public http: Http
 ) {
     this.mAppConfig = new Config();
+  }
+
+  public getScrollController(): ScrollController{
+    return this.mScrollController;
   }
 
   public getAppConfig(): Config {

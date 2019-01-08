@@ -4,16 +4,18 @@ res-block1 {
     // padding: 8px 4px;
     // margin: 15px;
   }
-  .res-name{
+
+  .res-name {
     font-family: 'Times New Roman';
     font-size: 40px;
     text-transform: uppercase;
     color: black;
     text-align: center;
-    margin: 100px;
-  
+    margin: 40px;
+
   }
-  .res-block1-b1-right{
+
+  .res-block1-b1-right {
     margin-top: 50px;
     padding: 50px 10px;
   }
@@ -24,65 +26,73 @@ res-block1 {
     background-repeat: no-repeat;
     height: calc(70vh - 60px);
   }
-  .background-img-b2{
+
+  .background-img-b2 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: calc(50vh - 40px);
     margin: 30px;
-    
+
   }
 
   .res-infor {
-    color:black;
+    color: black;
     font-size: 20px;
     width: 80%;
     text-align: center;
     justify-content: center;
     // padding: 10px 50px ;
-    margin:auto;  
+    margin: auto;
   }
+
   .text-overlay {
     position: relative;
     font-size: 1.4rem;
     background: rgba($color: white, $alpha: 0.8);
-    margin-top: 100px;
+    margin-top: 50px;
     padding: center
   }
-    .showing-items {
-      position: absolute;
-      background: rgba($color: white, $alpha: 0.8);
+
+  .showing-items {
+    position: absolute;
+    background: rgba($color: white, $alpha: 0.8);
     color: black;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: 0;
-      font-size: 40px;
-      text-align: center;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      display: none;
-      z-index: 99;
-      padding: 30px;
-      align-items: center;
-      justify-content: center;
-      flex-flow: column;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-size: 40px;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: none;
+    z-index: 9;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
   }
+
   .text-overlay:hover {
-    color:black;
-    .showing-items{
+    color: black;
+
+    .showing-items {
       display: flex;
     }
   }
-  .res-block1-b2{
-    // margin: 15px;
+
+  .res-block1-b2 {
+    justify-content: center;    
   }
-  .hover-time{
+
+  .hover-time {
     font-size: 20px;
     font-family: 'Times New Roman';
   }
-  .res-hover1{
-  }
-  .res-logo{
+
+  .res-hover1 {}
+
+  .res-logo {
     width: 30%;
     text-align: center;
     margin: auto;

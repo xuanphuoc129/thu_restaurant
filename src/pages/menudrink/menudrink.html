@@ -1,0 +1,31 @@
+
+
+<ion-content padding>
+<res-header></res-header>
+<div class="img-background"></div>
+<div class="menu-drink">
+  <ion-row class="res-menudrink">
+    <ion-col col-12>
+      <div class="name-drink">
+        <img src="" alt="">
+      </div>
+    </ion-col>
+    <ion-col col-3 class="col-title">
+      <div class="title" [class.selected]="item.id == mMenuSelect.id" *ngFor = "let item of menu-drink"(click)='onClickMenuItems(item)'>
+        {{item.title}}
+      </div>
+    </ion-col>
+    <ion-col col-6 class="drink-detail">
+      <div class="detail" *ngFor="let item of mMenuSelect.arrayitems">
+        <div class="name">
+          {{item.name}}
+          <span float-right>{{item.price}}</span>
+        </div>
+        <div class="description">
+          {{item.description}}
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+</div>
+</ion-content>

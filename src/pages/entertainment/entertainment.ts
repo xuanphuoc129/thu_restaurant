@@ -20,7 +20,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EntertainmentPage {
 
-  imageUrl: string = "./assets/imgs/res-1.jpg";
+  imageUrl: string = "./assets/imgs/chef-1.jpg";
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

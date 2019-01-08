@@ -1,0 +1,58 @@
+<ion-content >
+    <res-header></res-header>
+
+  <div class="order">
+    <ion-list class="list-input"   >
+    <div class="title">Đặt Bàn</div>
+
+        <!-- <meta name = viewport content = "width = device-width, init-scale = 1.0"> -->
+    <ion-item class="try">
+      <ion-label  color="dark" >Tên </ion-label>
+      <ion-input placeholder="Text-Input"></ion-input>
+    </ion-item>
+    <ion-item class="try">
+      <ion-label color="dark"> Số điện thoại </ion-label>
+      <ion-input placeholder="Text-tel"></ion-input>
+    </ion-item>
+    <ion-item class="try"> 
+      <ion-label color="dark">Ngày đặt bàn</ion-label>
+      <ion-datetime display-format="YYYY MMM,DD" min="2018" max = "2020"></ion-datetime>
+    </ion-item>
+   <ion-item class="try">
+      <ion-label color="dark">Thời gian</ion-label>
+      <ion-select [(ngModel)]="Time" multiple="true">
+        <ion-option valua="07:00">07:00</ion-option>
+        <ion-option valua="08:00">08:00</ion-option>
+        <ion-option valua="09:00">09:00</ion-option>
+        <ion-option valua="10:00">10:00</ion-option>
+        <ion-option valua="11:00">11:00</ion-option>
+        <ion-option valua="12:00">12:00</ion-option>
+        <ion-option valua="13:00">13:00</ion-option>
+        <ion-option valua="14:00">14:00</ion-option>
+        <ion-option valua="15:00">15:00</ion-option>
+        <ion-option valua="16:00">16:00</ion-option>
+        <ion-option valua="17:00">17:00</ion-option>
+        <ion-option valua="18:00">18:00</ion-option>
+        <ion-option valua="19:00">19:00</ion-option>
+        <ion-option valua="20:00">20:00</ion-option>
+        <ion-option valua="21:00">21:00</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="try">
+      <ion-label color="dark"> Email </ion-label>
+      <ion-input placeholder="Text-email"></ion-input>
+    </ion-item>
+    <ion-item class="try">
+      <ion-label color="dark" type="number"> Số người </ion-label>
+      <ion-input type="number" placeholder="Number"></ion-input>
+    </ion-item>
+    <ion-item class="try">
+      <ion-label color="dark"> Ghi chú </ion-label>
+      <ion-textarea placeholder="Text-note"></ion-textarea>
+    </ion-item >
+    <div class="btn-send">
+      <button ion-button icon-bottom (click)="onClicksend()" class="btn-send"> Gửi </button>
+    </div>
+  </ion-list>
+</div>
+</ion-content>

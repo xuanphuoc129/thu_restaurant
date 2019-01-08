@@ -10,9 +10,9 @@ page-entertainment {
     height: calc(100vh - 100px);
 
     .cheft-text {
-      left: 50%;
+      left: 30%;
       top: 50%;
-      min-width: 300px;
+      min-width: 500px;
       transform: translate(-50%, -50%);
 
       .description {
@@ -24,7 +24,7 @@ page-entertainment {
   }
 
   .animated {
-    animation-duration: 1s;
+    animation-duration: 2s;
   }
 
   .teacher-text {

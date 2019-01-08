@@ -19,4 +19,11 @@ export class ResHeaderComponent {
     this.text = 'Hello World';
   }
 
+  goToLink(link){
+    let aEle = document.createElement("a");
+    aEle.href = link;
+    document.body.appendChild(aEle);
+    aEle.click();
+  }
+
 }

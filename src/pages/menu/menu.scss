@@ -1,53 +1,122 @@
 page-menu {
   ion-content.content {
-    background-color: black;
-    margin-top: 50px;
+    background-color: white;
+    // margin-top: 50px;
   }
-  .title{
-    color: yellow;
+
+  .title {
+    color: black;
     padding: 20px;
-    font-size: 15px;
-    &.selected{
-      color: white;
-      font-size: 20px; 
+    font-size: 20px;
+
+    &.selected {
+      color: black;
+      font-size: 30px;
     }
   }
-  .itemname{
-    color: white;
+
+  .itemname {
+    color: black;
     font-size: 15px;
+
   }
-  .description{
+
+  .description {
     color: gray;
     margin-top: 10px;
+
   }
-  .detail{
+
+  .detail {
     padding: 20px;
     width: 500px;
   }
-  .itemname:hover{
-    color: yellow;
+
+  .itemname:hover {
+    color: orangered;
   }
-  .col-title{
+
+  .col-title {
     left: 50px;
   }
-  .res-menu{
-height: 100vh;   
-    // width: 70%;
-    // margin: auto;
+
+  .res-menu {
+    min-height: 100vh;
+    padding-top: 50px;
+    background-image: url("../assets/imgs/forkandknife.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
   }
-  .res-food-detail{
-    height:100vh ;
+
+  .res-food-detail {
+    height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
+   
   }
-  .res-menu-food{
+
+  .res-menu-food {
     background: white;
   }
-  .background-food-img{
+
+  .background-food-img {
     height: 500px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
   }
+
+  .row-1 {
+    // height: 100vh;
+    // width: 100vw;
+    // background-image: url("../assets/imgs/5.jpg");
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: center;
+    // position: relative;
+  }
+
+  .div-slogan {
+    font-family: fantasy;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .name-menu {
+    text-align: center;
+
+    img {
+      max-width: 50%;
+    }
+  }
+
+  // .background-image {
+  //   background-size: cover;
+  //   background-position: center;
+  //   background-repeat: no-repeat;
+  //   height: calc(70vh - 60px);
+  // }
+
+  .row3{
+   
+    .background-img {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 160px;
+      width: 20vw;
+      // overflow-y: hidden;
+      // padding-right:8000px; 
+      
+    }
+  //   ::-webkit-scrollbar { 
+  //     display: none; 
+  // }
+  
+}
 }

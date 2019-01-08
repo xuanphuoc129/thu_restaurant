@@ -7,6 +7,7 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
+  mRestaurantName: string = "Nhà hàng Delicious";
   constructor(public navCtrl: NavController) {
     // this.navCtrl.push("ContactPage",{name: "thu"});
   }

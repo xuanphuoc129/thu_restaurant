@@ -1,17 +1,17 @@
-
-
 <ion-content no-padding>
-  <div class="background"></div>
+  <!-- <div class="background"></div> -->
+  <res-header></res-header>
+
   <div class="res-img-header">
-     <div class="overlay-infor animated fadeIn"> 
-        
-<img src="../assets/imgs/res-hover-img.png" alt="">
-      </div>
-      <res-header></res-header>
+
+    <div class="title-resname animated slideInUp">
+      {{mRestaurantName}}
     </div>
-  <div class="res-block1 padding" >
-    <!-- block1 -->
    
+  </div>
+  <div class="res-block1 padding">
+    <!-- block1 -->
+
     <res-block1></res-block1>
   </div>
   <div class="res-block2">
@@ -25,7 +25,7 @@
   <div class="res-block4 padding">
     <!-- block4 -->
     <res-block4>
-      
+
     </res-block4>
   </div>
   <div class="res-block5 padding">
@@ -37,7 +37,7 @@
       </res-block5>
     </ion-row>
   </div>
-  <order-btn-fab></order-btn-fab> 
+  <order-btn-fab></order-btn-fab>
   <!-- goi component -->
   <!-- <ion-fab bottom right>
       <button ion-fab icon-left color="danger">

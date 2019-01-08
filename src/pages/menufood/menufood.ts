@@ -8,7 +8,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage(
+  {
+    name: 'MenufoodPage',
+    segment: 'menu'
+  }
+)
 @Component({
   selector: 'page-menufood',
   templateUrl: 'menufood.html',

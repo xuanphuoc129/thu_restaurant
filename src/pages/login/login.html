@@ -1,9 +1,6 @@
 <div class="contain">
   <res-header></res-header>
-  <form action="/action_page.php" style="max-width:500px; margin:auto">
-    <!-- <div class="login"> -->
-
-
+  <!-- <form action="/action_page.php" style="max-width:500px; margin:auto">
       <h2>Đăng nhập</h2> 
       <div class="input-container">
         <i class="fa fa-user icon"></i>
@@ -14,5 +11,27 @@
         <input class="input-field" type="password" placeholder="Password" name="psw">
       </div>
   </form>
-  <button type="submit" class="btn">Đăng nhập</button>
+  <button type="submit" class="btn">Đăng nhập</button> -->
+
+  <div class="white-bg-container">
+    <div class="title-login">
+      Đăng nhập
+    </div>
+
+    <div class="text-show-input">Tên đăng nhập</div>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="username"></ion-input>
+    </ion-item>
+
+    <div class="text-show-input margin-top">Mật khẩu</div>
+    <ion-item>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <div class="btn-login-container">
+      <button ion-button (click)="onClickLogin()">
+        Đăng nhập
+      </button>
+    </div>
+  </div>
 </div>

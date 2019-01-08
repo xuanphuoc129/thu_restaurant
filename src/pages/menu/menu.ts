@@ -33,7 +33,7 @@ export class Items {
 }
 @IonicPage({
   name: 'MenuPage',
-  segment: 'menu'
+  segment: 'menufood'
 })
 @Component({
   selector: 'page-menu',

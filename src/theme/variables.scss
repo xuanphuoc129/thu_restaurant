@@ -33,13 +33,17 @@ $app-direction: ltr;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
-$colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
-);
+$colors: (primary: #488aff,
+secondary: #32db64,
+danger: #f53d3d,
+light: #f4f4f4,
+yellow: #f9e33b,
+dark: #222);
+$appcolors: (primary: #488aff,
+secondary: #32db64,
+danger: #f53d3d,
+light: #f4f4f4,
+dark: #222);
 
 
 // App iOS Variables
@@ -86,10 +90,12 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
 @font-face {
   font-family: "helveticaneuelight";
-  src: url("../assets/fonts/helveticaneuelight.woff") format("woff"), /* Modern Browsers */
-  url("../assets/fonts/helveticaneuelight.woff2") format("woff2");
+  src: url("../assets/fonts/helveticaneuelight.woff") format("woff"),
+    /* Modern Browsers */
+    url("../assets/fonts/helveticaneuelight.woff2") format("woff2");
   /* Modern Browsers */
   font-weight: normal;
   font-style: normal;

@@ -97,4 +97,16 @@ res-block1 {
     text-align: center;
     margin: auto;
   }
+
+  .res-block1-b1-right-b1 {
+    &.left {
+      padding-left: 0;
+    }
+
+    &.right {
+      padding-right: 0;
+    }
+  }
+
+
 }

@@ -7,6 +7,8 @@ import { Slides, ModalController } from 'ionic-angular';
  * See https://angular.io/api/core/Component for more info on Angular
  * Components.
  */
+
+
 @Component({
   selector: 'res-block1',
   templateUrl: 'res-block1.html'
@@ -25,12 +27,24 @@ export class ResBlock1Component {
   url8: string = "./assets/imgs/menubonus.png";// blackTuesday
   url9: string = "./assets/imgs/res-bl1-ladies.png";// ladies
 
+  slides : Array<any> = [];
   constructor(
     public modalCtrl: ModalController
-  ) {
-    
-    console.log('Hello ResBlock1Component Component');
-    this.text = 'Hello World';
+  ) { 
+    this.slides = [
+      {
+        url1: this.url,
+        url2: this.url1,
+      },
+      {
+        url1: this.url2,
+        url2: this.url3,
+      },
+      {
+        url1: this.url4,
+        url2: this.url5,
+      }
+    ];
   }
 
   onNextSlide() {
@@ -39,9 +53,5 @@ export class ResBlock1Component {
   onBackSlide() {
     this.myslide.slidePrev();
   }
-  // onClickOrder(){
-  //   let pupup = this.modalCtrl.create("OrderPopupPage");
-  //   pupup.present();
-  // }
-
+ 
 }

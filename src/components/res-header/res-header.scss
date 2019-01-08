@@ -7,8 +7,10 @@ res-header {
 
   .res-right {
     display: flex;
-    // justify-content: center;
-    // overflow: visible;
+    
+    img{
+      max-height: 40px;
+    }
 
     .res-menu-item {
       margin: 0;

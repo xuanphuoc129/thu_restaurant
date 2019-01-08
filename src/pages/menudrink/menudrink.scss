@@ -1,0 +1,36 @@
+page-menudrink {
+.title{
+    color: black;
+    padding: 20px;
+    font-size: 20px;
+    &.selected{
+        color: black;
+        font-size: 30px;
+    }
+}
+.itemname{
+    color: black;
+    font-size: 15px;
+}
+.description{
+    color: gray;
+    margin-top: 10px;
+}
+.detail{
+    padding: 20px;
+    width: 500px;
+}
+.itemname:hover{
+    color:orange;
+}
+.col-title{
+    left:50px;
+}
+.img-background{
+    background-image: url("./assets/imgs/wine.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+} 

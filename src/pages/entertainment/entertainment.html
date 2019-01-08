@@ -2,23 +2,28 @@
   <res-header></res-header>
 
   <div class="res-enter-block-1">
-    <div class="bg-image cheft-image p-relative" [ngStyle]="{'background-image': 'url('+imageUrl+')'}">
-      <div class="p-absolute cheft-text" text-center>
-        <div text-uppercase class="font-big white-color animated fadeInUp">Đầu bếp tại bàn</div>
-        <div class="font-body description white-color animated fadeInDown delay">
+    <div class="bg-image cheft-image p-relative"  [ngStyle]="{'background-image': 'url('+imageUrl+')'}">
+      <div class="p-absolute cheft-text ">
+        <div text-uppercase class="font-big white-color animated bounceInDown">Đầu bếp tại bàn</div>
+        <div class="font-body description white-color animated bounceInDown">
           Thứ 2 hàng tuần
         </div>
       </div>
     </div>
   </div>
+  <!-- <h2 class="headline__secondary" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+    <span class="first-letter">&nbsp;</span>Welcome</h2> -->
 
 
-
-  <ion-row align-items-center class="res-enter-block-2 p-relative">
-    <ion-col col-sm-6></ion-col>
-    <ion-col col-sm-6 text-center>
-      <div class="bg-image teacher p-relative" [ngStyle]="{'background-image': 'url('+imageUrl+')'}"></div>
-    </ion-col>
-  </ion-row>
+  <div class="res-enter-block-1 p-relative" style="margin-top:200px">
+    <div class="bg-image cheft-image p-relative" [ngStyle]="{'background-image': 'url('+imageUrl+')'}">
+      <div class="p-absolute teacher-text">
+        <div text-uppercase class="font-big white-color animated bounceInLeft">Tri ân ngày Nhà Giáo Việt Nam</div>
+        <div class="font-body description white-color  animated bounceInLeft">
+          Hãy để Delicious cùng bạn gửi lời cám ơn đến người thầy của bạn
+        </div>
+      </div>
+    </div>
+  </div>
 
 </ion-content>

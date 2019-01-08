@@ -68,4 +68,11 @@ res-header {
       max-height: 50px;
     }
   }
+  .home:target ~ #header #navigation #link-home,
+.menufood:target ~ #header #navigation #menufood,
+.about:target ~ #header #navigation #link-about,
+.contactus:target ~ #header #navigation #contactus{
+    background: #288;
+    color: #337777;
+}
 }

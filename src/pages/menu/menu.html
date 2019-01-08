@@ -1,46 +1,12 @@
 <ion-content>
   <res-header></res-header>
-  <div>
-    <!-- <div class="res-menu-food">
-      <ion-row justify-content-center align-items-center class="row-slide-items">
-        <ion-col col-1>
-          <button ion-button clear color="dark" (click)="onBackSlide()">
-            <ion-icon name="ios-arrow-back"></ion-icon>
-          </button>
-        </ion-col>
-        <ion-col col-8> -->
-          <!-- <ion-slides  >
-            <ion-slide>
-                  <div class="background-food-img" [ngStyle]="{'background-image':'url('+url+')'}"></div>
-                  <div class="name-food"></div>
-                  <div class="name-price"></div>
-            </ion-slide>
-            <ion-slide>
-                  <div class="background-food-img" [ngStyle]="{'background-image':'url('+url+')'}"></div>
-                  <div class="name-food"></div>
-                  <div class="name-price"></div>
-            </ion-slide>
-            <ion-slide>
-                  <div class="background-food-img" [ngStyle]="{'background-image':'url('+url+')'}"></div>
-                  <div class="name-food"></div>
-                  <div class="name-price"></div>
-            </ion-slide>
-            <ion-slide>
-                  <div class="background-food-img" [ngStyle]="{'background-image':'url('+url+')'}"></div>
-                  <div class="name-food"></div>
-                  <div class="name-price"></div>
-            </ion-slide> -->
-          <!-- </ion-slides> -->
-        <!-- </ion-col>
-        <ion-col col-1>
-          <button ion-button clear color="dark" (click)="onNextSlide()">
-            <ion-icon name="ios-arrow-forward"></ion-icon>
-          </button>
-        </ion-col>
-      </ion-row>
-    </div> -->
+  <div class="menu-food">
     <ion-row justify-content-center class="res-menu">
-
+      <ion-col col-12>
+        <div class="name-menu">
+          <img src="./assets/imgs/web+buttons-01.png" alt="">
+        </div>
+      </ion-col>
       <ion-col col-3 class="col-title">
         <div class="title" [class.selected]="item.id == mMenuSelect.id " *ngFor="let item of menus" (click)='onClickMenuItems(item)'>
           {{item.title}}
@@ -58,8 +24,22 @@
           </div>
         </div>
       </ion-col>
-
     </ion-row>
-    <order-btn-fab></order-btn-fab>
+    <ion-row>
+      <ion-col col-1>
+        <button ion-button clear color="dark" (click)="onNextSlide()">
+          <ion-icon name="ios-arrow-forward"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
   </div>
+
+  <div class="div-slogan">Món Ăn Nổi Bật</div>
+
+  <ion-row nowrap align-items-center class="row3">
+    <ion-col *ngFor="let item of arrayImages">
+      <div class="background-img image-container" [ngStyle]="{'background-image': 'url('+item+')'}"></div>
+    </ion-col>
+  </ion-row>
+  <order-btn-fab></order-btn-fab>
 </ion-content>

@@ -32,8 +32,8 @@ export class Items {
   }
 }
 @IonicPage({
-  name: 'ContactPage',
-  segment: 'menu'
+  name: 'MenuPage',
+  segment: 'menufood'
 })
 @Component({
   selector: 'page-menu',
@@ -42,13 +42,20 @@ export class Items {
 export class MenuPage {
   @ViewChild(Slides) myslide:Slides;
   text: string;
-  url:string= "../assets/imgs/res-table1.jpeg";
-  url1:string= "../assets/imgs/res-table1.jpeg";
-  url2:string= "../assets/imgs/res-table1.jpeg";
+  url3:string= "../assets/imgs/rice5.jpg";
+  url1:string= "../assets/imgs/6.jpg";
+  url2:string= "../assets/imgs/7.jpg";
+  url4:string= "../assets/imgs/2.jpg";
+  url5:string= "../assets/imgs/res-img2.jpg";
+  url6:string= "../assets/imgs/n-7.jpg";
+  url7:string= "../assets/imgs/p-7.jpg";
+  url8:string= "../assets/imgs/ri-7.jpg";
+  url9:string= "../assets/imgs/r-7.jpg";
+  url10:string= "../assets/imgs/b-7.jpg";
   
 
   menus: Array<Menuitems> = [];// cho mảng
-
+  arrayImages: Array<string> = [];
 
   mMenuSelect: Menuitems = new Menuitems(); // khởi tạo giá trị mặc định cho biến
 
@@ -58,6 +65,20 @@ export class MenuPage {
   }
 
   ionViewDidLoad() {
+
+    this.arrayImages = [
+      "../assets/imgs/rice5.jpg",
+      "../assets/imgs/6.jpg",
+      "../assets/imgs/7.jpg",
+      "../assets/imgs/2.jpg",
+       "../assets/imgs/res-img2.jpg",
+      "../assets/imgs/n-7.jpg",
+      "../assets/imgs/p-7.jpg",
+      "../assets/imgs/ri-7.jpg",
+      "../assets/imgs/r-7.jpg",
+      "../assets/imgs/b-7.jpg",
+      
+    ];
     this.onLoadDataFromFile();
     // for (let index = 0; index < 10; index++) {
 

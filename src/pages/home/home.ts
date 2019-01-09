@@ -8,7 +8,8 @@ import { AppModuleProvider } from '../../providers/app-module/app-module';
 })
 export class HomePage {
 
-  mRestaurantName: string = "Nhà hàng Delicious";
+  mRestaurantName: string = "Wellcome to Delicous";
+  mAddress: string = "Số 2, Tràng Thi, Hoàn Kiếm, Hà nội";
   constructor(
     public mAppModule : AppModuleProvider,
     public navCtrl: NavController) {

@@ -7,6 +7,7 @@ import { ResBlock5Component } from './res-block5/res-block5';
 import { IonicModule } from 'ionic-angular';
 import { ResHeaderComponent } from './res-header/res-header';
 import { OrderBtnFabComponent } from './order-btn-fab/order-btn-fab';
+import { AdminheaderComponent } from './adminheader/adminheader';
 @NgModule({
 	declarations: [ResBlock1Component,
     ResBlock2Component,
@@ -14,7 +15,8 @@ import { OrderBtnFabComponent } from './order-btn-fab/order-btn-fab';
     ResBlock4Component,
     ResBlock5Component,
     ResHeaderComponent,
-    OrderBtnFabComponent],
+    OrderBtnFabComponent,
+    AdminheaderComponent],
 	imports: [
         IonicModule
     ],
@@ -24,6 +26,7 @@ import { OrderBtnFabComponent } from './order-btn-fab/order-btn-fab';
     ResBlock4Component,
     ResBlock5Component,
     ResHeaderComponent,
-    OrderBtnFabComponent]
+    OrderBtnFabComponent,
+    AdminheaderComponent]
 })
 export class ComponentsModule {}

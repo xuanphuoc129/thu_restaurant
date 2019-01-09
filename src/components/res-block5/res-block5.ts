@@ -18,7 +18,7 @@ export class ResBlock5Component {
   hotline: string = "096.968.1900";
   service_support: string = "096.968.1900";
   phone: string = "0973.950.482";
-  email: string = "delicious_support@gmail.com";
+  email: string = "deleicious@gmail.com";
   constructor() {
     console.log('Hello ResBlock5Component Component');
     this.text = 'Hello World';

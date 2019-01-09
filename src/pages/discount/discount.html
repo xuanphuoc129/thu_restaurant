@@ -4,15 +4,16 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<res-header></res-header>
 
 
 <ion-content>
-  
-  <ion-row class="row">
-      <div class="title">
-          Danh sách các combo siêu khuyến mãi
-        </div>
+  <res-header></res-header>
+
+  <div class="combo-container">
+    <div class="banner-discount">
+      <img src="./assets/imgs/combo-banner.jpg" alt="">
+    </div>
+    
     <ion-row>
       <ion-col col-6 class="col">
         <img src="./assets/imgs/combo1.png" alt="">
@@ -20,17 +21,13 @@
       <ion-col col-6 class="col">
         <img src="./assets/imgs/combo2.png" alt="">
       </ion-col>
-    </ion-row>
 
-    <ion-row>
       <ion-col col-6 class="col">
         <img src="./assets/imgs/combo3.png" alt="">
       </ion-col>
       <ion-col col-6 class="col">
         <img src="./assets/imgs/combo4.png" alt="">
       </ion-col>
-    </ion-row>
-    <ion-row>
       <ion-col col-6 class="col">
         <img src="./assets/imgs/combo5.png" alt="">
       </ion-col>
@@ -38,5 +35,9 @@
         <img src="./assets/imgs/combo6.png" alt="">
       </ion-col>
     </ion-row>
-  </ion-row>
+  </div>
+
+
+  <res-block5></res-block5>
+  <order-btn-fab></order-btn-fab>
 </ion-content>

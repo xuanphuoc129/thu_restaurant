@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Utils } from '../../providers/core/app/utils';
 
 /**
  * Generated class for the OrderPage page.
@@ -17,12 +18,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'order.html',
 })
 export class OrderPage {
+  mDate: string = "";
 
+  mTime: string = "07:00";
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.mDate = Utils.getRequestDate(new Date());
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad OrderPage');
+    
   }
 
 }

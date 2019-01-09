@@ -1,8 +1,87 @@
 page-contactus {
-.table{
-    
-    border: 1px solid gray;
-    width: 50%;
-    margin: 2px;
-}
+  .background {
+    height: 60vh;
+    background-image: url("../assets/imgs/Contactuspage.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .padding-form {
+    padding: 36px 16px;
+    .title-font{
+        font-size: 3rem;
+        font-weight: bold;
+        font-family: 'Charm', cursive;
+        text-transform: capitalize;
+    }
+  }
+  .block5-container-bg{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .form-contact {
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50vh;
+    left: calc((100% - 1000px) / 2);
+    // transform: translateX(-50%);
+    margin-bottom: 32px;
+
+    background: whitesmoke;
+
+    .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+    .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+      box-shadow: none;
+    }
+
+    .item-md.item-block .item-inner {
+      border-bottom: none;
+    }
+
+    .item-md.item-input.item-input-has-focus .item-inner,
+    .item-md.item-input.input-has-focus .item-inner {
+
+      border-radius: 5px;
+      box-shadow: none;
+    }
+
+    .item-ios.item-input.item-input-has-focus .item-inner,
+    .item-ios.item-input.input-has-focus .item-inner {
+      border-radius: 5px;
+      box-shadow: none;
+    }
+
+    .text-input {
+      padding-left: 10px !important;
+      color: #8e6097;
+      font-size: 1.4rem;
+
+    }
+
+    .item {
+      padding-left: 0;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 6px rgba($color: #8e6097, $alpha: .2);
+    }
+  }
+
+  .col {
+    padding: 0;
+  }
+
+  .btn-send{
+      text-align: center;
+      margin-top: 16px;
+      .button{
+          background: #b81353;
+          min-width: 120px;
+          border-radius: 5px;
+      }
+  }
 }

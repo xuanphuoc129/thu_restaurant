@@ -1,58 +1,59 @@
-<ion-content >
-    <res-header></res-header>
+<ion-content>
+  <res-header></res-header>
 
   <div class="order">
-    <ion-list class="list-input"   >
-    <div class="title">Đặt Bàn</div>
+    <div class="form-container animated slideInDown">
+        <div class="title-order">Đặt Bàn</div>
 
-        <!-- <meta name = viewport content = "width = device-width, init-scale = 1.0"> -->
-    <ion-item class="try">
-      <ion-label  color="dark" >Tên </ion-label>
-      <ion-input placeholder="Text-Input"></ion-input>
-    </ion-item>
-    <ion-item class="try">
-      <ion-label color="dark"> Số điện thoại </ion-label>
-      <ion-input placeholder="Text-tel"></ion-input>
-    </ion-item>
-    <ion-item class="try"> 
-      <ion-label color="dark">Ngày đặt bàn</ion-label>
-      <ion-datetime display-format="YYYY MMM,DD" min="2018" max = "2020"></ion-datetime>
-    </ion-item>
-   <ion-item class="try">
-      <ion-label color="dark">Thời gian</ion-label>
-      <ion-select [(ngModel)]="Time" multiple="true">
-        <ion-option valua="07:00">07:00</ion-option>
-        <ion-option valua="08:00">08:00</ion-option>
-        <ion-option valua="09:00">09:00</ion-option>
-        <ion-option valua="10:00">10:00</ion-option>
-        <ion-option valua="11:00">11:00</ion-option>
-        <ion-option valua="12:00">12:00</ion-option>
-        <ion-option valua="13:00">13:00</ion-option>
-        <ion-option valua="14:00">14:00</ion-option>
-        <ion-option valua="15:00">15:00</ion-option>
-        <ion-option valua="16:00">16:00</ion-option>
-        <ion-option valua="17:00">17:00</ion-option>
-        <ion-option valua="18:00">18:00</ion-option>
-        <ion-option valua="19:00">19:00</ion-option>
-        <ion-option valua="20:00">20:00</ion-option>
-        <ion-option valua="21:00">21:00</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item class="try">
-      <ion-label color="dark"> Email </ion-label>
-      <ion-input placeholder="Text-email"></ion-input>
-    </ion-item>
-    <ion-item class="try">
-      <ion-label color="dark" type="number"> Số người </ion-label>
-      <ion-input type="number" placeholder="Number"></ion-input>
-    </ion-item>
-    <ion-item class="try">
-      <ion-label color="dark"> Ghi chú </ion-label>
-      <ion-textarea placeholder="Text-note"></ion-textarea>
-    </ion-item >
-    <div class="btn-send">
-      <button ion-button icon-bottom (click)="onClicksend()" class="btn-send"> Gửi </button>
+        <ion-item >
+          <ion-label >Tên</ion-label>
+          <ion-input ></ion-input>
+        </ion-item>
+        <ion-item >
+          <ion-label > Số điện thoại </ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item >
+          <ion-label >Ngày đặt bàn</ion-label>
+          <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="mDate" min="2019" max="2019"></ion-datetime>
+        </ion-item>
+        <ion-item >
+          <ion-label >Thời gian</ion-label>
+          <ion-select [(ngModel)]="mTime">
+            <ion-option value="07:00">07:00</ion-option>
+            <ion-option value="08:00">08:00</ion-option>
+            <ion-option value="09:00">09:00</ion-option>
+            <ion-option value="10:00">10:00</ion-option>
+            <ion-option value="11:00">11:00</ion-option>
+            <ion-option value="12:00">12:00</ion-option>
+            <ion-option value="13:00">13:00</ion-option>
+            <ion-option value="14:00">14:00</ion-option>
+            <ion-option value="15:00">15:00</ion-option>
+            <ion-option value="16:00">16:00</ion-option>
+            <ion-option value="17:00">17:00</ion-option>
+            <ion-option value="18:00">18:00</ion-option>
+            <ion-option value="19:00">19:00</ion-option>
+            <ion-option value="20:00">20:00</ion-option>
+            <ion-option value="21:00">21:00</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item >
+          <ion-label > Email </ion-label>
+          <ion-input ></ion-input>
+        </ion-item>
+        <ion-item >
+          <ion-label > Số người </ion-label>
+          <ion-input type="number" ></ion-input>
+        </ion-item>
+        <ion-item >
+          <ion-label > Ghi chú </ion-label>
+          <ion-input ></ion-input>
+        </ion-item>
+        <div class="btn-send">
+          <button ion-button icon-bottom (click)="onClicksend()" class="btn-send"> Gửi </button>
+        </div>
     </div>
-  </ion-list>
-</div>
+  </div>
+
+  <res-block5></res-block5>
 </ion-content>

@@ -19,7 +19,9 @@ import { AppModuleProvider } from '../providers/app-module/app-module';
     ComponentsModule,
     HttpModule,
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{
+      scrollPadding: false
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

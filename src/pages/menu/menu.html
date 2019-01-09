@@ -25,21 +25,29 @@
         </div>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <!-- <ion-row>
       <ion-col col-1>
         <button ion-button clear color="dark" (click)="onNextSlide()">
           <ion-icon name="ios-arrow-forward"></ion-icon>
         </button>
       </ion-col>
-    </ion-row>
+    </ion-row> -->
   </div>
 
   <div class="div-slogan">Món Ăn Nổi Bật</div>
 
-  <ion-row nowrap align-items-center class="row3">
-    <ion-col *ngFor="let item of arrayImages">
+  <ion-row nowrap align-items-center id="rowFoodID" class="row3">
+    <ion-col col-3 *ngFor="let item of arrayImages">
       <div class="background-img image-container" [ngStyle]="{'background-image': 'url('+item+')'}"></div>
     </ion-col>
   </ion-row>
+
+  <div class="row-dot-container" >
+    <div class="dot" [class.selected]="mCurrentIndex == 0" (click)="onClickDot(0)" tappable></div>
+    <div class="dot" [class.selected]="mCurrentIndex == 1" (click)="onClickDot(1)" tappable></div>
+    <div class="dot" [class.selected]="mCurrentIndex == 2" (click)="onClickDot(2)" tappable></div>
+  </div>
+
+  <res-block5></res-block5>
   <order-btn-fab></order-btn-fab>
 </ion-content>

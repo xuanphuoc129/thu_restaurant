@@ -55,7 +55,7 @@ page-menu {
     height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
-   
+
   }
 
   .res-menu-food {
@@ -81,10 +81,12 @@ page-menu {
   }
 
   .div-slogan {
-    font-family: fantasy;
-    font-size: 20px;
-    padding: 20px;
-    text-align: center;
+    font-size: 3.6rem;
+    padding-top: 32px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-family: 'Cabin', sans-serif;
+    padding-left: 10px;
   }
 
   .name-menu {
@@ -102,21 +104,37 @@ page-menu {
   //   height: calc(70vh - 60px);
   // }
 
-  .row3{
-   
+  .row3 {
+    padding-bottom: 32px;
+    overflow: hidden;
     .background-img {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 160px;
-      width: 20vw;
-      // overflow-y: hidden;
-      // padding-right:8000px; 
-      
+      height: 200px;
+      border-radius: 5px;
     }
-  //   ::-webkit-scrollbar { 
-  //     display: none; 
-  // }
-  
-}
+
+    //   ::-webkit-scrollbar { 
+    //     display: none; 
+    // }
+
+  }
+  .row-dot-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 16px;
+    .dot{
+      height: 18px;
+      width: 18px;
+      background: black;
+      border-radius: 50%;
+      opacity: .2;
+      margin: 0 10px;
+      &.selected{
+        opacity: 1;
+      }
+    }
+  }
 }

@@ -1,36 +1,51 @@
 page-menudrink {
-.title{
-    color: black;
-    padding: 20px;
-    font-size: 20px;
-    &.selected{
-        color: black;
-        font-size: 30px;
-    }
-}
-.itemname{
-    color: black;
-    font-size: 15px;
-}
-.description{
-    color: gray;
-    margin-top: 10px;
-}
-.detail{
-    padding: 20px;
-    width: 500px;
-}
-.itemname:hover{
-    color:orange;
-}
-.col-title{
-    left:50px;
-}
-.img-background{
-    background-image: url("./assets/imgs/wine.jpeg");
+  .img-background {
+    background-image: url("../assets/imgs/drink-banner.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
+    height: 100vh;
+    overflow: hidden;
+    padding-top: 50px;
+  }
+  .drink-title-name{
+    text-align: center;
+    color: map-get($map: $colors , $key: yellow);
+    font-size: 3.2rem;
+    font-weight: bold;
+    font-family: 'Cabin', sans-serif;
+    text-transform: uppercase;
+    height: 80px;
+    padding-top: 20px;
+  }
+  .menu-drink{
+    height: calc(100% - 80px);
+    overflow: scroll;
+  }
+  .f-icon-midde{
+    color: map-get($map: $colors, $key: yellow);
+    padding:  0;
+    text-align: center;
+  }
+  .detail {
+    padding: 20px;
+    // width: 500px;
+    .name{
+      color: white;
+      font-size: 1.6rem;
+      font-weight: bold;
+      padding-bottom: 10px;
+      .price{
+        color: map-get($map: $colors, $key: yellow);
+        font-size: 1.6rem;
+      }
+    }
+    .description{
+      color: #afb2b6;
+    }
+  }
+
+  
+  
 }
-} 

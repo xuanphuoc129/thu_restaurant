@@ -1,40 +1,74 @@
 page-order {
-  .list-input {
-    // margin-top: 100px;
-    padding: 20px;
-    width: 100%;
-    justify-content: center;
-    position: relative;
-    background-image: url("../assets/imgs/2.jpg");
+
+  .order {
+    background-image: url("../assets/imgs/res-block2-b4.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     height: 100%;
+    padding-top: 70px;
 
+    .form-container{
+      max-width: 500px;
+      margin: auto;
+      background: whitesmoke;
+      padding: 0 16px 16px 16px;
+      border-radius: 5px;
+    }
+    .btn-send{
+      text-align: center;
+      margin-top: 10px;
+      .button{
+        min-width: 200px;
+        border-radius: 5px;
+        background: #f36c00;
+      }
+    }
+    ion-select{
+      padding: 8px !important;
+    }
+    ion-datetime{
+      padding: 8px !important;
+    }
+    .title-order {
+      font-family: Georgia, 'Times New Roman';
+      font-size: 3.2rem;
+      text-align: center;
+      padding: 16px;
+      color: black;
+    }
+    ion-label{
+      min-width: 120px;
+      max-width: 120px;
+     
+    }
+    .item{
+      margin: 10px 0;
+      border-radius: 5px;
+      box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+    }
+
+    .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+    .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+      box-shadow: none;
+    }
+
+    .item-md.item-block .item-inner {
+      border-bottom: none;
+    }
+
+    .item-md.item-input.item-input-has-focus .item-inner,
+    .item-md.item-input.input-has-focus .item-inner {
+
+      border-radius: 5px;
+      box-shadow: none;
+    }
+
+    .item-ios.item-input.item-input-has-focus .item-inner,
+    .item-ios.item-input.input-has-focus .item-inner {
+      border-radius: 5px;
+      box-shadow: none;
+    }
   }
-  .order{
-  }
-  .btn-send {
-  margin-left: 50%; 
-  margin-bottom: 50px; 
-  }
-  .imgbackground{
-    max-width: 100%;
-    max-height: 100%;
-  }
-  .try{
-    border: 5px;
-    // margin-top: 5px;
-    justify-content: center;
-    margin-left: 20%;
-    background-color: rgba($color: white, $alpha: 0.5);
-    width: 40%;
-    color: black;
-    // padding: 0 5px 0;
-  }
-  .title{
-    font-family: Georgia, 'Times New Roman';
-    font-size: 30px;
-    margin: 70px;
-    text-align: center; 
-  }
+
 }

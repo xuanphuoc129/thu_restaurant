@@ -2,5 +2,6 @@ order-btn-fab {
   .btn-order {
     background: map-get($map: $colors, $key: yellow);
     color: black;
+    border-radius: 5px;
   }
 }

@@ -1,7 +1,8 @@
 page-mana-user {
     .post-tag-list {
-        margin: 5px 0 10px;
+        margin: 10px 10px 10px;
         clear: both;
+
       }
     
       .post-tag {
@@ -22,5 +23,20 @@ page-mana-user {
         transition: all .15s ease-in-out;
         color: #39739d;
         background-color: #e1ecf4;
+      }
+      th{
+        border: 1px solid;
+        height: 50px;
+      }
+      td{
+        border: 1px solid;
+        height: 50px;
+      }
+      .date{
+        margin-top: 15px
+      }
+      .title{
+        font-size: 30px;
+        font-family: 'Times New Roman', Times, serif
       }
 }

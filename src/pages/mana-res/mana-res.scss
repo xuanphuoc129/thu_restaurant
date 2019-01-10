@@ -10,7 +10,7 @@ page-mana-res {
   }
   .post-tag {
     margin: 20px;
-    max-width: 110px;
+    width: 110px;
     overflow: hidden;
     text-overflow: ellipsis;
     position: relative;
@@ -28,11 +28,14 @@ page-mana-res {
     background-color: #e1ecf4;
   }
 .list-res{
-    color: #000;
-    border-width: 1px;
     position: relative;
-    border-style: solid;
-    width: 80vh;
 }
-
+th{
+    border : 1px solid;
+    height: 50px;
+}
+td{
+    border: 1px solid;
+    height: 50px;;
+}
 }

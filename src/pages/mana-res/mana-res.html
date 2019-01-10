@@ -1,16 +1,20 @@
 
-<ion-content padding>
+<ion-content>
 <ion-row>
-  <ion-col col-4>
+  <ion-col col-1 no-padding>
     <adminheader></adminheader>
   </ion-col>
-  <ion-col col-8>
+  <ion-col col-11>
     <div class="title">Quản lý nhà hàng</div>
     <div class="post-tag-list">
         <span class="post-tag">Thêm</span>
         <span class="post-tag">Sửa</span>
         <span class="post-tag">Xóa</span>
     </div>
+    <div class="date">
+        <span class="post-tag">Chọn Ngày</span>
+        <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="mDate" min="2019" max="2019"></ion-datetime>
+      </div>
     <div class="list-res"></div>
     <table class="table-infor" width = 100%>
       <tr class="table-title">
@@ -25,7 +29,6 @@
         <td>{{res.userid}}</td>
         <td>{{res.status}}</td>
       </tr>
-      </tbody>
     </table>
   </ion-col>
 </ion-row>

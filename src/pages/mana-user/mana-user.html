@@ -1,15 +1,38 @@
-<ion-content padding>
+<ion-content>
   <ion-row>
-    <ion-col col-4>
+    <ion-col col-1 no-padding>
       <adminheader></adminheader>
     </ion-col>
-    <ion-col col-8>
+    <ion-col col-11 >
       <div class="title">Quản lý người dùng</div>
       <div class="post-tag-list">
         <span class="post-tag">Thêm</span>
         <span class="post-tag">Sửa</span>
         <span class="post-tag">Xóa</span>
+        <div class="date">
+          <span class="post-tag">Chọn Ngày</span>
+          <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="mDate" min="2019" max="2019"></ion-datetime>
+        </div>
+        
       </div>
+      <table class="table-user" width=100%>
+        <tr class="table-row">
+          <th>STT</th>
+          <th>Tên Người Dùng</th>
+          <th>Thời hạn đăng ký</th>
+          <th>Tên nhà hàng</th>
+          <th>Loại hình kinh doanh</th>
+          <th>Trạng thái</th>
+        </tr>
+        <tr *ngFor=" let user of users; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.timestart}}</td>
+          <td>{{user.res}}</td>
+          <td>{{user.type}}</td>
+          <td>{{user.status}}</td>
+        </tr>
+      </table>
     </ion-col>
   </ion-row>
 </ion-content>

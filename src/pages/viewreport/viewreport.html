@@ -1,9 +1,9 @@
 <ion-content>
   <ion-row>
-    <ion-col col-3>
+    <ion-col col-1 no-padding>
         <adminheader></adminheader>
     </ion-col>
-    <ion-col col-9>
+    <ion-col col-11>
         <div class="contain"></div>
         <div class="title">Xem Báo Cáo</div>
         <div class="post-tag-list">
@@ -11,37 +11,29 @@
           <span class="post-tag">Đã Xem</span>
           <span class="post-tag">Thùng rác</span>
         </div>
-        <div class="date">Chọn Ngày</div>
-        <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="mDate" min="2019" max="2019"></ion-datetime>
+        <div class="date">
+            <span class="post-tag">Chọn Ngày</span>
+            <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="mDate" min="2019" max="2019"></ion-datetime>
+          </div>
 
-        <table class=table>
-            <thead class="table">
+        <table class=table width=100%>
               <tr class="table">
                 <th>STT</th>
-                <th>Tên báo cáo</th>
-                <th>Người tạo</th>
+                <th>Tên Nhà Hàng</th>
+                <th>Chủ Nhà Hàng</th>
                 <th>Ngày tạo</th>
                 <th>Trạng thái</th>
+                <th>Nội Dung</th>
               </tr>
-            </thead>
-            <tbody class="table">
-              <tr class="table">
-                <td>Thư</td>
-                <td>22/09</td>
-                <td>thucusuc</td>
+              <tr *ngFor="let report of reports; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{report.res}}</td>
+                <td>{{report.owner}}</td>
+                <td>{{report.date}}</td>
+                <td>{{report.status}}</td>
+                <td>{{report.content}}</td>
               </tr>
-              <tr class="table">
-                <td>Phương</td>
-                <td>2502</td>
-                <td>mary@example.com</td>
-              </tr>
-              <tr class="table">
-                <td>Phươcs điên</td>
-                <td></td>
-                <td>Phươc@example.com</td>
-              </tr>
-            </tbody>
-          </table>
+            </table>
     </ion-col>
   </ion-row>
  

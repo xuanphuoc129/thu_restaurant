@@ -34,40 +34,25 @@ page-viewreport {
     background-color: #e1ecf4;
   }
 
-  .date {
-    margin: 20px;
-    max-width: 110px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    position: relative;
-    padding: .4em .5em;
-    margin: 10px 10x 10px 0;
-    font-size: 11px;
-    line-height: 1;
-    white-space: nowrap;
-    text-align: center;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 0;
-    transition: all .15s ease-in-out;
-    color: #39739d;
-    background-color: #e1ecf4;
-  }
+ 
 
   .table {
     color: #000;
     border-width: 1px;
     position: relative;
     border-style: solid;
-    width: 80vh;
+    margin: 15px;
+
 
   }
   th{
     border-right: 1px solid black;
+    height: 50px;
 
 }
 td{
-    border-right: 1px solid black;
+    border: 1px solid black;
+    height: 50px;
 
 }
 }

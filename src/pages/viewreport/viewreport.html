@@ -1,8 +1,63 @@
 <ion-content>
-  <adminheader></adminheader>
-  <div class="title">Xem Báo Cáo</div>
-<ion-item>
-  <ion-lable>Chọn ngày</ion-lable>
-  <ion-datetime display-format="YYYY MMMM,DD" min="2010" max=2020></ion-datetime>
-</ion-item>  
+  <ion-row>
+    <ion-col col-3>
+        <adminheader></adminheader>
+    </ion-col>
+    <ion-col col-9>
+        <div class="contain"></div>
+        <div class="title">Xem Báo Cáo</div>
+        <div class="post-tag-list">
+          <span class="post-tag">Tất cả</span>
+          <span class="post-tag">Đã Xem</span>
+          <span class="post-tag">Thùng rác</span>
+        </div>
+        <div class="date">Chọn Ngày</div>
+        <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="mDate" min="2019" max="2019"></ion-datetime>
+
+        <table class=table>
+            <thead class="table">
+              <tr class="table">
+                <th>STT</th>
+                <th>Tên báo cáo</th>
+                <th>Người tạo</th>
+                <th>Ngày tạo</th>
+                <th>Trạng thái</th>
+              </tr>
+            </thead>
+            <tbody class="table">
+              <tr class="table">
+                <td>Thư</td>
+                <td>22/09</td>
+                <td>thucusuc</td>
+              </tr>
+              <tr class="table">
+                <td>Phương</td>
+                <td>2502</td>
+                <td>mary@example.com</td>
+              </tr>
+              <tr class="table">
+                <td>Phươcs điên</td>
+                <td></td>
+                <td>Phươc@example.com</td>
+              </tr>
+            </tbody>
+          </table>
+    </ion-col>
+  </ion-row>
+ 
+  <!-- <div class="title-table">
+      <div class="row header">
+          <div class="col">Tên Báo cáo</div>
+          <div class="col">Người Tạo</div>
+          <div class="col">Ngày Tạo</div>
+          <div class="col">Trạng thái</div>
+          <div class="col"></div>
+        </div>
+        <div class="row" ng-repeat="data in ctrl.data">
+          <div class="col">{{data.name}}</div>
+          <div class="col">{{data.user}}</div>
+          <div class="col">LK {{data.date}}</div>
+          <div class="col">{{data.status}}</div>
+           <div class="col"><button class="button" ng-click="ctrl.add($index)">Add</button></div> -->
+
 </ion-content>

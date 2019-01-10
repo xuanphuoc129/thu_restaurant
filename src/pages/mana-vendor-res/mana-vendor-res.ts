@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the ViewreportPage page.
+ * Generated class for the ManaVendorResPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,18 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-viewreport',
-  templateUrl: 'viewreport.html',
+  selector: 'page-mana-vendor-res',
+  templateUrl: 'mana-vendor-res.html',
 })
-export class ViewreportPage {
-    
-  
+export class ManaVendorResPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ViewreportPage');
+    console.log('ionViewDidLoad ManaVendorResPage');
   }
 
 }

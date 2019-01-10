@@ -1,0 +1,26 @@
+page-mana-user {
+    .post-tag-list {
+        margin: 5px 0 10px;
+        clear: both;
+      }
+    
+      .post-tag {
+        margin: 20px;
+        max-width: 110px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: relative;
+        padding: .4em .5em;
+        margin: 10px 10x 10px 0;
+        font-size: 11px;
+        line-height: 1;
+        white-space: nowrap;
+        text-align: center;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 0;
+        transition: all .15s ease-in-out;
+        color: #39739d;
+        background-color: #e1ecf4;
+      }
+}

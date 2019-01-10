@@ -1,19 +1,13 @@
-page-viewreport {
-  .title {
+page-mana-res {
+.title{
     font-size: 30px;
     font-family: time;
     margin: 20px;
-  }
-
-  .name {
-    color: black;
-  }
-
-  .post-tag-list {
+}
+.post-tag-list {
     margin: 5px 0 10px;
     clear: both;
   }
-
   .post-tag {
     margin: 20px;
     max-width: 110px;
@@ -33,41 +27,12 @@ page-viewreport {
     color: #39739d;
     background-color: #e1ecf4;
   }
-
-  .date {
-    margin: 20px;
-    max-width: 110px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    position: relative;
-    padding: .4em .5em;
-    margin: 10px 10x 10px 0;
-    font-size: 11px;
-    line-height: 1;
-    white-space: nowrap;
-    text-align: center;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 0;
-    transition: all .15s ease-in-out;
-    color: #39739d;
-    background-color: #e1ecf4;
-  }
-
-  .table {
+.list-res{
     color: #000;
     border-width: 1px;
     position: relative;
     border-style: solid;
     width: 80vh;
-
-  }
-  th{
-    border-right: 1px solid black;
-
 }
-td{
-    border-right: 1px solid black;
 
-}
 }

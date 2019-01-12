@@ -1,38 +1,34 @@
 <ion-content>
   <ion-row>
     <ion-col col-1 no-padding>
-      <adminheader></adminheader>
+      <adminheader [selected]="4"></adminheader>
     </ion-col>
-    <ion-col col-11 >
-      <div class="title">Quản lý người dùng</div>
-      <div class="post-tag-list">
-        <span class="post-tag">Thêm</span>
-        <span class="post-tag">Sửa</span>
-        <span class="post-tag">Xóa</span>
-        <div class="date">
-          <span class="post-tag">Chọn Ngày</span>
-          <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="mDate" min="2019" max="2019"></ion-datetime>
-        </div>
-        
+    <ion-col col-11>
+      <div class="v-container">
+
+        <div class="v-title">Quản lý người dùng</div>
+        <div style="height: 20px"></div>
+
+        <table class="table-user" width=100%>
+          <tr class="table-row">
+            <th class="w-32">STT</th>
+            <th class="w-32">ID</th>
+            <th text-left>Tên Người Dùng</th>
+            <th >Tên đăng nhập</th>
+            <th>Trạng thái</th>
+          </tr>
+          <tr *ngFor=" let user of users; let i = index" [class.white-bg]="i%2 == 1">
+            <td text-center>{{i+1}}</td>
+            <td text-center>{{user.userID}}</td>
+            <td>{{user.name}}</td>
+            <td text-center>{{user.username}}</td>
+            <td text-center>{{user.status | userStatus}}</td>
+          </tr>
+        </table>
       </div>
-      <table class="table-user" width=100%>
-        <tr class="table-row">
-          <th>STT</th>
-          <th>Tên Người Dùng</th>
-          <th>Thời hạn đăng ký</th>
-          <th>Tên nhà hàng</th>
-          <th>Loại hình kinh doanh</th>
-          <th>Trạng thái</th>
-        </tr>
-        <tr *ngFor=" let user of users; let i = index">
-          <td>{{i+1}}</td>
-          <td>{{user.name}}</td>
-          <td>{{user.timestart}}</td>
-          <td>{{user.res}}</td>
-          <td>{{user.type}}</td>
-          <td>{{user.status}}</td>
-        </tr>
-      </table>
+
+
+
     </ion-col>
   </ion-row>
 </ion-content>

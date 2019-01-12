@@ -1,4 +1,4 @@
-import * as core from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RestaurantSFSConnector } from '../../providers/smartfox/SFSConnector';
 import { UserData } from '../../providers/class/UserData';
@@ -11,10 +11,8 @@ import { AppModuleProvider } from '../../providers/app-module/app-module';
  * Ionic pages and navigation.
  */
 
-@IonicPage({ name: 'LoginPage',
-segment: 'login'} 
-)
-@core.Component({
+@IonicPage()
+@Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
@@ -28,15 +26,15 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-    this.mAppModule._loadAppConfig().then(()=>{
+    this.mAppModule._loadAppConfig().then(() => {
 
-    }).catch((err)=>{
-      
-    }) 
+    }).catch((err) => {
+
+    })
   }
 
-  onClickLogin(){
-    if(this.username.trim() == '' || this.password.trim() == ''){
+  onClickLogin() {
+    if (this.username.trim() == '' || this.password.trim() == '') {
       alert("Bạn chưa điền tên đăng nhập hoặc mật khẩu");
       return;
     }
@@ -45,28 +43,34 @@ export class LoginPage {
 
   }
 
-  connectToServer(){
-    RestaurantSFSConnector.getInstance().connect().then(()=>{
+  connectToServer() {
+    RestaurantSFSConnector.getInstance().connect().then(() => {
       this.doLogin();
-    }).catch(err=>{
+    }).catch(err => {
       alert("Không thể kết nối đến server.");
     })
   }
 
-  doLogin(){
+  doLogin() {
     let userData = new UserData();
     userData.setUsername(this.username);
     userData.setPassword(this.password);
-    
-    RestaurantSFSConnector.getInstance().doLogin(userData).then((data)=>{
+
+    RestaurantSFSConnector.getInstance().doLogin(userData).then((data) => {
       this.loginSuccess(data);
-    }).catch(err=>{
+    }).catch(err => {
 
     })
   }
 
-  loginSuccess(data){
-    alert("Login success");
+  loginSuccess(data) {
+    this.mAppModule.onLoginSuccess(data);
+    let user = this.mAppModule.getUser();
+    if(user.getRole() == 2){
+      this.navCtrl.setRoot("ManaResPage");
+    }else{
+      alert("Đăng nhập thành công");
+    }
   }
 
 }

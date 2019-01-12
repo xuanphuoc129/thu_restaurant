@@ -1,37 +1,11 @@
 page-viewreport {
-  .title {
-    font-size: 30px;
-    font-family: time;
-    margin: 20px;
+  .v-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #222;
   }
-
-  .name {
-    color: black;
-  }
-
-  .post-tag-list {
-    margin: 5px 0 10px;
-    clear: both;
-  }
-
-  .post-tag {
-    margin: 20px;
-    max-width: 110px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    position: relative;
-    padding: .4em .5em;
-    margin: 10px 10x 10px 0;
-    font-size: 11px;
-    line-height: 1;
-    white-space: nowrap;
-    text-align: center;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 0;
-    transition: all .15s ease-in-out;
-    color: #39739d;
-    background-color: #e1ecf4;
+  .v-container{
+    padding: 20px;
   }
 
  
@@ -55,4 +29,13 @@ td{
     height: 50px;
 
 }
+}
+
+.v-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #222;
+}
+.v-container{
+  padding: 20px;
 }

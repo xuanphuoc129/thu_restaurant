@@ -267,4 +267,16 @@ export class RestaurantSFSConnector extends SFSConnector {
         params = category.toSFSObject(params);
         this.send(this.cmd,params);
     }
+
+    public getListRestaurant(){
+        let params = new SFS2X.SFSObject();
+        params.putUtfString(Paramskey.CMD, RestaurantCMD.GET_LIST_RESTAURANT);
+        this.send(this.cmd,params);
+    }
+
+    public getListUser(){
+        let params = new SFS2X.SFSObject();
+        params.putUtfString(Paramskey.CMD, RestaurantCMD.GET_LIST_ACCOUNT);
+        this.send(this.cmd,params);
+    }
 }

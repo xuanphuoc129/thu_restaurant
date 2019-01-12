@@ -1,30 +1,31 @@
-<div class="menu"> 
-    <a href="" class="res-logo">
-      <img class ="img"src="./assets/imgs/admin.png">
-   </a>
- <div class="mana">
- <a href="" class="menu-item">
-   Trang chủ
- </a>
- </div>
- <div class="mana">
-    <a href="#/viewreport" class="menu-item">
-        Xem báo cáo
-      </a>
- </div>
- <div class="mana">
-    <a href="#/mana-res"class="menu-item">
-        QL nhà hàng
-      </a>
- </div>
- <div class="mana">
-    <a href="#/mana-vendor-res"class="menu-item">
-        QL chuỗi nhà hàng
-      </a>
- </div>
- <div class="mana">
-   <a href="#/mana-user" class="menu-item">
-  QL người dùng</a>
- </div>
+<div class="a-menu">
+  <div class="res-logo">
+    <img src="./assets/imgs/admin.png">
+  </div>
+  <div class="mUserName">{{mUser.name}}</div>
+  <div class="mana">
+    <a href="" class="a-menu-item">
+      Trang chủ
+    </a>
+  </div>
+  <div class="mana" [class.selected]="mSelectedIndex == 1">
+    <a href="#/viewreport" class="a-menu-item">
+      Xem báo cáo
+    </a>
+  </div>
+  <div class="mana" [class.selected]="mSelectedIndex == 2">
+    <a href="#/mana-res" class="a-menu-item">
+      QL nhà hàng
+    </a>
+  </div>
+  <div class="mana" [class.selected]="mSelectedIndex == 3">
+    <a href="#/mana-vendor-res" class="a-menu-item">
+      QL chuỗi nhà hàng
+    </a>
+  </div>
+  <div class="mana" [class.selected]="mSelectedIndex == 4">
+    <a href="#/mana-user" class="a-menu-item">
+      QL người dùng</a>
+  </div>
 
 </div>

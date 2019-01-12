@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AppModuleProvider } from '../../providers/app-module/app-module';
+import { RestaurantSFSConnector } from '../../providers/smartfox/SFSConnector';
+import { Paramskey } from '../../providers/smartfox/Paramkeys';
+import { RestaurantClient } from '../../providers/smartfox/RestaurantClient';
+import { RestaurantCMD } from '../../providers/smartfox/RestaurantCMD';
+import { Restaurants } from '../../providers/class/Restaurant';
 
 /**
  * Generated class for the ManaResPage page.
@@ -15,37 +21,84 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ManaResPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public mAppModuel: AppModuleProvider,
+    public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ManaResPage');
+    if(!this.mAppModuel.isLogin){
+      this.navCtrl.setRoot("LoginPage");
+    }else{
+      RestaurantSFSConnector.getInstance().addListener("ManaResPage", response=>{
+        this.onExtensions(response);
+      })
+      RestaurantSFSConnector.getInstance().getListRestaurant();
+    }
   }
+
+  onExtensions(response){
+    let cmd = response.cmd;
+    let params = response.params;
+
+    if(params.getInt(Paramskey.STATUS) == 1){
+      let dataBase = RestaurantClient.getInstance().doBaseDataWithCMDParams(cmd,params);
+      if(cmd == RestaurantCMD.GET_LIST_RESTAURANT){
+        this.onBaseListRestaurant(dataBase);
+      }
+    }else{
+      alert(params.getUtfString(Paramskey.MESSAGE));
+    }
+  }
+
+  ionViewWillUnload(){
+    RestaurantSFSConnector.getInstance().removeListener("ManaResPage");
+  }
+
+  onBaseListRestaurant(dataBase){
+    console.log(dataBase);
+    this.restaurants = [];
+    dataBase.forEach(element => {
+      this.restaurants.push({
+        name: element.getName(),
+        owner: element["managerID"] ? element["managerID"] : "Chưa cập nhât",
+        type: element.type_service  > -1 ? " ": "Chưa cập nhât",
+        status: "Đang hoạt động"
+      })
+    });
+  }
+
+
   restaurants = [
     {
       name: "delicious",
-      userid: 121,
-      status: 1,
+      owner: "Nguyen Van A",
+      type: "Cà phê giải khát",
+      status: "Đang hoạt động",
     },
     {
       name: "Đường ngon",
-      userid: 502,
-      status: 0,
+      owner: "Nguyen Van A",
+      type: "Cà phê giải khát",
+      status: "Đang hoạt động",
     },
     {
       name: "Trâu tươi",
-      userid: 15,
-      status: 1,
+      owner: "Nguyen Van A",
+      type: "Cà phê giải khát",
+      status: "Đang hoạt động"
     },
     {
       name: "Thu Hằng",
-      userid: 424,
-      status: 0,
+      owner: "Nguyen Van A",
+      type: "Cà phê giải khát",
+      status: "Đang hoạt động"
     },
     {
       name: "Trâu Tươi -Hai Bà Trưng",
-      userid: 601,
-      status: 1,
+      owner: "Nguyen Van A",
+      type: "Cà phê giải khát",
+      status: "Đang hoạt động"
     }
   ]
 }

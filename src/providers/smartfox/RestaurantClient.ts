@@ -1,6 +1,8 @@
 import { SfsClientBaseExtension } from "../core/smartfox/sfs-client-extension";
 import { RestaurantCMD } from "./RestaurantCMD";
 import { RestaurantOfUser } from "../class/RestaurantOfUser";
+import { Restaurants } from "../class/Restaurant";
+import { Users } from "../class/Users";
 
 export class RestaurantClient extends SfsClientBaseExtension{
     public static _instance : RestaurantClient = null;
@@ -23,6 +25,12 @@ export class RestaurantClient extends SfsClientBaseExtension{
         else if(cmd == RestaurantCMD.CREATE_FLOOR){
             return this.onParseCreateFloor(params);
         }
+        else if(cmd == RestaurantCMD.GET_LIST_RESTAURANT){
+            return this.onParseGetListRestaurant(params);
+        }
+        else if(cmd == RestaurantCMD.GET_LIST_ACCOUNT){
+            return this.onParseGetListAccount(params);
+        }
     }
 
     public onParseGET_RESTAURANT_OF_USER(params){
@@ -33,6 +41,36 @@ export class RestaurantClient extends SfsClientBaseExtension{
             for(let i = 0;i < array.size(); i++){
                 let sfs = array.getSFSObject(i);
                 let newRes = new RestaurantOfUser();
+                newRes.fromSFSObject(sfs);
+                res.push(newRes);
+            }
+        }
+        return res;
+    }
+
+    public onParseGetListRestaurant(params){
+        let data = this.doParseArrayExtensions(params);
+        let array = data.array;
+        let res = [];
+        if(array){
+            for(let i = 0;i < array.size(); i++){
+                let sfs = array.getSFSObject(i);
+                let newRes = new Restaurants();
+                newRes.fromSFSObject(sfs);
+                res.push(newRes);
+            }
+        }
+        return res;
+    }
+
+    public onParseGetListAccount(params){
+        let data = this.doParseArrayExtensions(params);
+        let array = data.array;
+        let res = [];
+        if(array){
+            for(let i = 0;i < array.size(); i++){
+                let sfs = array.getSFSObject(i);
+                let newRes = new Users();
                 newRes.fromSFSObject(sfs);
                 res.push(newRes);
             }

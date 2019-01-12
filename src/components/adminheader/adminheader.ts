@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AppModuleProvider } from '../../providers/app-module/app-module';
+import { Users } from '../../providers/class/Users';
 
 /**
  * Generated class for the AdminheaderComponent component.
@@ -12,11 +14,14 @@ import { Component } from '@angular/core';
 })
 export class AdminheaderComponent {
 
-  text: string;
+  @Input("selected") mSelectedIndex: number = 1;
+  mUser : Users = new Users();
 
-  constructor() {
-    console.log('Hello AdminheaderComponent Component');
-    this.text = 'Hello World';
+  constructor(public mAppModule: AppModuleProvider) {
+
+    this.mUser = this.mAppModule.getUser();
   }
+
+
 
 }

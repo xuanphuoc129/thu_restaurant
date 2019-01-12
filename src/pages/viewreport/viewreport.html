@@ -1,12 +1,14 @@
 <ion-content>
   <ion-row>
     <ion-col col-1 no-padding>
-        <adminheader></adminheader>
+      <adminheader [selected]="1"></adminheader>
     </ion-col>
     <ion-col col-11>
-        <div class="contain"></div>
-        <div class="title">Xem Báo Cáo</div>
-        <div class="post-tag-list">
+      <div class="v-container">
+          <div class="v-title">Báo Cáo</div>
+      </div>
+      
+      <!-- <div class="post-tag-list">
           <span class="post-tag">Tất cả</span>
           <span class="post-tag">Đã Xem</span>
           <span class="post-tag">Thùng rác</span>
@@ -33,10 +35,10 @@
                 <td>{{report.status}}</td>
                 <td>{{report.content}}</td>
               </tr>
-            </table>
+            </table> -->
     </ion-col>
   </ion-row>
- 
+
   <!-- <div class="title-table">
       <div class="row header">
           <div class="col">Tên Báo cáo</div>

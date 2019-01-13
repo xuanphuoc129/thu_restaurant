@@ -1,6 +1,6 @@
 page-entertainment {
   ion-content.content {
-    background-image: url("../assets/imgs/res-bl2.2.jpg");
+    background-image: url("../assets/imgs/bg-i.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -56,5 +56,12 @@ page-entertainment {
       }
 
     }
+  }
+  .name-block{
+    color: #c8f737; 
+    // background-image: url("../assets/imgs/a.png");
+  }
+  .img-name{
+    background-image: url("../assets/imgs/a.png")
   }
 }

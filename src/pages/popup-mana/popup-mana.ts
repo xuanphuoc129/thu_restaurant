@@ -2,31 +2,24 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the EntertainmentPage page.
+ * Generated class for the PopupManaPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
 
-@IonicPage(
-  {
-    name: "EntertainmentPage",
-    segment: "entertainment"
-  }
-)
+@IonicPage()
 @Component({
-  selector: 'page-entertainment',
-  templateUrl: 'entertainment.html',
+  selector: 'page-popup-mana',
+  templateUrl: 'popup-mana.html',
 })
-export class EntertainmentPage {
+export class PopupManaPage {
 
-  imageUrl: string = "./assets/imgs/abc.jpg";
- 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    // console.log('ionViewDidLoad EntertainmentPage');
+    console.log('ionViewDidLoad PopupManaPage');
   }
 
 }

@@ -5,23 +5,37 @@
     </ion-col>
     <ion-col col-11>
       <div class="v-container">
-        <div class="v-title">Danh sách nhà hàng</div>
+        <ion-row>
+          <ion-col col-6>
+              <div class="v-title">Danh sách nhà hàng</div>
+          </ion-col>
+          <ion-col col-6>
+            <div text-right>
+                <button (click)="onClickAdd()" ion-button color="dark" round>Thêm mới</button>
+            </div>
+          </ion-col>
+        </ion-row>
+       
         <div style="height: 20px"></div>
-        <button ion-button color="dark" round>Thêm mới</button>
+        
         <table class="table-infor" width=100%>
             <tr class="table-title">
               <th class="w-32">STT</th>
               <th text-left>Tên nhà hàng</th>
-              <th>Chủ Nhà Hàng</th>
-              <th text-left>Loại Hình Kinh Doanh</th>
+              <th text-left>Hotline</th>
+              <th text-left>Địa chỉ</th>
+              <th>Loại hình phục vụ</th>
+              <th>Hình thức phục vụ</th>
               <th>Trạng thái</th>
             </tr>
             <tr *ngFor="let res of restaurants ; let i = index" [class.white-bg]="i%2 == 1">
               <td text-center>{{i+1}}</td>
               <td>{{res.name}}</td>
-              <td text-center>{{res.owner}}</td>
-              <td text-left>{{res.type}}</td>
-              <td text-center>{{res.status}}</td>
+              <td>{{res.hotline || 'Chưa cập nhật'}}</td>
+              <td>{{res.address || 'Chưa cập nhật'}}</td>
+              <td text-center>{{res.type_service | typeService}}</td>
+              <td text-center>{{res.form_service | formService}}</td>
+              <td text-center>{{res.status | resStatus}}</td>
             </tr>
           </table>
       </div>

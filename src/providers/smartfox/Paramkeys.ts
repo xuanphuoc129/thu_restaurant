@@ -54,6 +54,7 @@ export class Paramskey {
     public static NUMBER_CUSTOMER: string = "number_customer";
 	public static CURRENCY: string = "currency";
 	public static UNIT: string = "unit";
+	public static VENDOR_ID : string = "vendor_id";
 
     constructor() { }
 }

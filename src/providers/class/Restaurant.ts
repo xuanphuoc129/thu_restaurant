@@ -18,8 +18,8 @@ export class Restaurants {
         o.putUtfString(Paramskey.NAME, this.getName());
         o.putUtfString(Paramskey.HOTLINE, this.getHotline());
         o.putUtfString(Paramskey.ADDRESS, this.getAddress());
-        o.putInt(Paramskey.TYPE_SERVICE, this.getType_service());
-        o.putInt(Paramskey.FORM_SERVICE, this.getForm_service());
+        o.putInt(Paramskey.TYPE_SERVICE, parseInt(this.getType_service()+""));
+        o.putInt(Paramskey.FORM_SERVICE, parseInt(this.getForm_service()+""));
         o.putInt(Paramskey.STATUS, this.getStatus());
         return o;
     }

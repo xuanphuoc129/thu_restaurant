@@ -1,0 +1,66 @@
+page-create-restaurant {
+
+  .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+  .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    box-shadow: none;
+  }
+
+  .item-md.item-block .item-inner {
+    border-bottom: none;
+  }
+
+  .item-md.item-input.item-input-has-focus .item-inner,
+  .item-md.item-input.input-has-focus .item-inner {
+
+    border-radius: 5px;
+    box-shadow: none;
+  }
+
+  .item-ios.item-input.item-input-has-focus .item-inner,
+  .item-ios.item-input.input-has-focus .item-inner {
+    border-radius: 5px;
+    box-shadow: none;
+  }
+
+  .text-input {
+    padding-left: 0px !important;
+    color: #8e6097;
+    font-size: 1.4rem;
+    margin: 13px 0 !important;
+  }
+
+  ion-label{
+    font-size: 1.4rem;
+  }
+
+  .item {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgba($color: #8e6097, $alpha: .2);
+  }
+
+  .container {
+    max-width: 500px;
+    margin: auto;
+    padding-top: 32px;
+
+    padding: 16px;
+    min-height: 100%;
+  }
+
+  .btn-save-bottom {
+    text-align: center;
+    margin-top: 20px;
+
+    .button {
+      background: map-get($map: $colors, $key: green);
+      border-radius: 5px;
+      min-width: 120px;
+    }
+  }
+
+  ion-content.content {
+    background: map-get($map: $colors, $key: light);
+  }
+}

@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AppModuleProvider } from '../../providers/app-module/app-module';
+import { RestaurantSFSConnector } from '../../providers/smartfox/SFSConnector';
+import { Paramskey } from '../../providers/smartfox/Paramkeys';
+import { RestaurantClient } from '../../providers/smartfox/RestaurantClient';
+import { RestaurantCMD } from '../../providers/smartfox/RestaurantCMD';
+import { Vendors } from '../../providers/class/Vendors';
 
 /**
  * Generated class for the ManaVendorResPage page.
@@ -15,60 +21,52 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ManaVendorResPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  vendors : Array<Vendors> = [];
+
+  constructor(
+    public mAppModule: AppModuleProvider,
+    public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ManaVendorResPage');
+    if (this.mAppModule.isLogin) {
+      RestaurantSFSConnector.getInstance().addListener("ManaVendorResPage", response => {
+        this.onExtensions(response);
+      })
+      RestaurantSFSConnector.getInstance().getListVendor();
+    } else {
+      this.navCtrl.setRoot("LoginPage");
+    }
   }
-vendors = [
-{
-  name : "Hotpotto",
-  type:"Nhà Hàng lẩu HongKong",
-  owner:"Trịnh Hoài Đức",
-  status:"Đang hoạt động"
-},
-{
-  name : "GoGi",
-  type:"Nhà Hàng Nướng không khói",
-  owner:"Anthonyhenry",
-  status:"Đang hoạt động"
-},
-{
-  name : "Sứ Bia",
-  type:"Nhà Hàng Việt",
-  owner:"Nguyễn Trần Nhật Anh",
-  status:"Đang hoạt động"
-},
-{
-  name : "kichi-kichi",
-  type:"Nhà Hàng lẩu Băng Chuyền",
-  owner:"NicodemusKuan",
-  status:"Đang hoạt động"
-},
-{
-  name : "ChefDzung",
-  type:"Nhà Hàng buffet",
-  owner:"Trịnh Đăng Dũng",
-  status:"Đang hoạt động"
-},
-{
-  name : "Hẻm quán",
-  type:"Nhà Hàng cơm Việt",
-  owner:"Trương Văn Nam",
-  status:"Đang hoạt động"
-},
-{
-  name : "Bánh cuốn thịt heo",
-  type:"Nhà Hàng Bánh Cuốn Việt",
-  owner:"Tô Hữu Thái",
-  status:"Đang hoạt động"
-},
-{
-  name : "Cơm Việt",
-  type:"Nhà Hàng Các món ăn Việt",
-  owner:"Nguyễn Tuấn Nghĩa",
-  status:"Đang hoạt động"
-},
-]
+
+  onExtensions(response) {
+    let cmd = response.cmd;
+    let params = response.params;
+
+    if (params.getInt(Paramskey.STATUS) == 1) {
+      let dataBase = RestaurantClient.getInstance().doBaseDataWithCMDParams(cmd, params);
+      if (cmd == RestaurantCMD.GET_VENDOR_LIST) {
+        this.onBaseListVendor(dataBase);
+      }
+    } else {
+      alert(params.getUtfString(Paramskey.MESSAGE));
+    }
+  }
+
+  ionViewWillUnload() {
+    RestaurantSFSConnector.getInstance().removeListener("ManaVendorResPage");
+  }
+
+  onBaseListVendor(dataBase){
+    this.vendors = dataBase;
+  }
+
+  onClickAdd(){
+    this.mAppModule.showModal("CreateVendorPage",null,(data)=>{
+      if(data){
+        RestaurantSFSConnector.getInstance().getListVendor();
+      }
+    })
+  }
+
 }

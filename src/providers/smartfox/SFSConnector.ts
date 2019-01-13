@@ -8,6 +8,8 @@ import { Products } from '../class/Products';
 import { Floors } from '../class/Floors';
 import { Areas } from '../class/Areas';
 import { Categories } from '../class/Categories';
+import { Restaurants } from '../class/Restaurant';
+import { Vendors } from '../class/Vendors';
 
 
 var SFS2X = window['SFS2X'];
@@ -215,10 +217,10 @@ export class RestaurantSFSConnector extends SFSConnector {
         this.send(this.cmd, params);
     }
 
-    public doCreateRestaurant(){
+    public doCreateRestaurant(restaurant: Restaurants){
         let params = new SFS2X.SFSObject();
-        // params.putUtfString(Paramskey.NAME, "New restaurant");
         params.putUtfString(Paramskey.CMD, RestaurantCMD.CREATE_RESTAURANT);
+        params = restaurant.toSFSObject(params);
         this.send(this.cmd, params);
     }
 
@@ -277,6 +279,19 @@ export class RestaurantSFSConnector extends SFSConnector {
     public getListUser(){
         let params = new SFS2X.SFSObject();
         params.putUtfString(Paramskey.CMD, RestaurantCMD.GET_LIST_ACCOUNT);
+        this.send(this.cmd,params);
+    }
+
+    public doCreateVendor(vendor : Vendors){
+        let params = new SFS2X.SFSObject();
+        params.putUtfString(Paramskey.CMD, RestaurantCMD.CREATE_VENDOR);
+        params = vendor.toSFSObject(params);
+        this.send(this.cmd,params);
+    }
+
+    public getListVendor(){
+        let params = new SFS2X.SFSObject();
+        params.putUtfString(Paramskey.CMD, RestaurantCMD.GET_VENDOR_LIST);
         this.send(this.cmd,params);
     }
 }

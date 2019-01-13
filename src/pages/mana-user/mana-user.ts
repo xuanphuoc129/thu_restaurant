@@ -27,36 +27,44 @@ export class ManaUserPage {
   }
 
   ionViewDidLoad() {
-    if(this.mAppModule.isLogin){
+    if (this.mAppModule.isLogin) {
       RestaurantSFSConnector.getInstance().addListener("ManaUserPage", response => {
         this.onExtensions(response);
       })
       RestaurantSFSConnector.getInstance().getListUser();
-    }else{
+    } else {
       this.navCtrl.setRoot("LoginPage");
     }
   }
 
-  onExtensions(response){
+  onExtensions(response) {
     let cmd = response.cmd;
     let params = response.params;
 
-    if(params.getInt(Paramskey.STATUS) == 1){
-      let dataBase = RestaurantClient.getInstance().doBaseDataWithCMDParams(cmd,params);
-      if(cmd == RestaurantCMD.GET_LIST_ACCOUNT){
+    if (params.getInt(Paramskey.STATUS) == 1) {
+      let dataBase = RestaurantClient.getInstance().doBaseDataWithCMDParams(cmd, params);
+      if (cmd == RestaurantCMD.GET_LIST_ACCOUNT) {
         this.onBaseListRestaurant(dataBase);
       }
-    }else{
+    } else {
       alert(params.getUtfString(Paramskey.MESSAGE));
     }
   }
 
-  ionViewWillUnload(){
+  ionViewWillUnload() {
     RestaurantSFSConnector.getInstance().removeListener("ManaUserPage");
   }
 
-  onBaseListRestaurant(dataBase){
+  onBaseListRestaurant(dataBase) {
     this.users = dataBase;
+  }
+
+  onClickAdd() {
+    this.mAppModule.showModal("CreateAccountPage", null, (data) => {
+      if (data) {
+        RestaurantSFSConnector.getInstance().getListUser();
+      }
+    });
   }
 
 }

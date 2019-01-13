@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Config } from '../core/app/config';
 import { Http } from '@angular/http';
-import { AlertController, ModalController } from 'ionic-angular';
+import { AlertController, ModalController, Loading, LoadingController, ToastController } from 'ionic-angular';
 import { RestaurantSFSConnector } from '../smartfox/SFSConnector';
 import 'rxjs/add/operator/map';
 import { ScrollController } from '../core/common/scroll-controller';
@@ -23,12 +23,26 @@ export class AppModuleProvider {
   private mAppConfig: Config;
   private mScrollController: ScrollController = new ScrollController();
   private mUser: Users = new Users();
+
+  mLoading: Loading;
   constructor(
+    public mToast : ToastController,
+    public mLoadingController: LoadingController,
     public mModalController: ModalController,
     public mAlertController: AlertController,
     public http: Http
 ) {
     this.mAppConfig = new Config();
+  }
+
+  public showToast(message, position?: string) {
+    let toast = this.mToast.create({
+      message: message,
+      position: position ? position : "bottom",
+      duration: 3000
+    });
+
+    toast.present();
   }
 
   public getUser(): Users{
@@ -65,6 +79,43 @@ export class AppModuleProvider {
       })
     })
 
+  }
+
+  async showLoading(content?: string, cssClass?: string, duration?: number) {
+    if (this.mLoading) {
+      try {
+        await this.mLoading.dismiss()
+      } catch (error) { }
+    }
+    this.mLoading = this.mLoadingController.create({
+      duration: duration ? duration : 3000,
+      dismissOnPageChange: true,
+      content: content ? content : "Waiting...!",
+      cssClass: cssClass ? cssClass : ""
+    });
+    this.mLoading.present();
+  }
+
+  async showLoadingNoduration(content?: string, cssClass?: string) {
+    if (this.mLoading) {
+      try {
+        await this.mLoading.dismiss()
+      } catch (error) { }
+    }
+    this.mLoading = this.mLoadingController.create({
+      dismissOnPageChange: true,
+      content: content ? content : "Waiting...!",
+      cssClass: cssClass ? cssClass : ""
+    });
+    this.mLoading.present();
+  }
+
+
+  public hideLoading(): void {
+    if (this.mLoading) {
+      this.mLoading.dismiss();
+      this.mLoading = null;
+    }
   }
 
   public onLoginSuccess(data){

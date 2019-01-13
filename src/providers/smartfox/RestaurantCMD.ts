@@ -72,5 +72,13 @@ export class RestaurantCMD {
 	public static  REMOVE_DISCOUNT : string = "remove_discount";
 	public static  GET_LIST_DISCOUNT_IN_RESTAURANT : string = "get_list_discount_in_restaurant";
 
+	public static  GET_VENDOR_LIST : string = "get_vendor_list";
+	public static  GET_RESTAURANT_IN_VENDOR : string = "get_restaurant_in_vendor";
+	public static  GET_VENDOR_INFO : string = "get_vendor_info";
+	public static  CREATE_VENDOR : string = "create_vendor";
+	public static  ADD_RESTAURANT_TO_VENDOR : string = "add_restaurant_to_vendor";
+	public static  REMOVE_VENDOR : string = "remove_vendor";
+	public static  UPDATE_VENDOR : string = "update_vendor";
+	public static  REMOVE_RESTAURANT_OUT_VENDOR : string = "remove_restaurant_out_vendor";
     constructor() { }
 }

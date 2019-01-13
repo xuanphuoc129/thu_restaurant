@@ -20,6 +20,7 @@ import { Restaurants } from '../../providers/class/Restaurant';
   templateUrl: 'mana-res.html',
 })
 export class ManaResPage {
+  restaurants : Array<Restaurants> = [];
 
   constructor(
     public mAppModuel: AppModuleProvider,
@@ -27,78 +28,45 @@ export class ManaResPage {
   }
 
   ionViewDidLoad() {
-    if(!this.mAppModuel.isLogin){
+    if (!this.mAppModuel.isLogin) {
       this.navCtrl.setRoot("LoginPage");
-    }else{
-      RestaurantSFSConnector.getInstance().addListener("ManaResPage", response=>{
+    } else {
+      RestaurantSFSConnector.getInstance().addListener("ManaResPage", response => {
         this.onExtensions(response);
       })
       RestaurantSFSConnector.getInstance().getListRestaurant();
     }
   }
 
-  onExtensions(response){
+  onExtensions(response) {
     let cmd = response.cmd;
     let params = response.params;
 
-    if(params.getInt(Paramskey.STATUS) == 1){
-      let dataBase = RestaurantClient.getInstance().doBaseDataWithCMDParams(cmd,params);
-      if(cmd == RestaurantCMD.GET_LIST_RESTAURANT){
+    if (params.getInt(Paramskey.STATUS) == 1) {
+      let dataBase = RestaurantClient.getInstance().doBaseDataWithCMDParams(cmd, params);
+      if (cmd == RestaurantCMD.GET_LIST_RESTAURANT) {
         this.onBaseListRestaurant(dataBase);
       }
-    }else{
+    } else {
       alert(params.getUtfString(Paramskey.MESSAGE));
     }
   }
 
-  ionViewWillUnload(){
+  ionViewWillUnload() {
     RestaurantSFSConnector.getInstance().removeListener("ManaResPage");
   }
 
-  onBaseListRestaurant(dataBase){
-    console.log(dataBase);
-    this.restaurants = [];
-    dataBase.forEach(element => {
-      this.restaurants.push({
-        name: element.getName(),
-        owner: element["managerID"] ? element["managerID"] : "Chưa cập nhât",
-        type: element.type_service  > -1 ? " ": "Chưa cập nhât",
-        status: "Đang hoạt động"
-      })
+  onBaseListRestaurant(dataBase) {
+    this.restaurants = dataBase;
+  }
+
+  onClickAdd() {
+    this.mAppModuel.showModal("CreateRestaurantPage", null, (data) => {
+      if (data) {
+        RestaurantSFSConnector.getInstance().getListRestaurant();
+      }
     });
   }
 
 
-  restaurants = [
-    {
-      name: "delicious",
-      owner: "Nguyen Van A",
-      type: "Cà phê giải khát",
-      status: "Đang hoạt động",
-    },
-    {
-      name: "Đường ngon",
-      owner: "Nguyen Van A",
-      type: "Cà phê giải khát",
-      status: "Đang hoạt động",
-    },
-    {
-      name: "Trâu tươi",
-      owner: "Nguyen Van A",
-      type: "Cà phê giải khát",
-      status: "Đang hoạt động"
-    },
-    {
-      name: "Thu Hằng",
-      owner: "Nguyen Van A",
-      type: "Cà phê giải khát",
-      status: "Đang hoạt động"
-    },
-    {
-      name: "Trâu Tươi -Hai Bà Trưng",
-      owner: "Nguyen Van A",
-      type: "Cà phê giải khát",
-      status: "Đang hoạt động"
-    }
-  ]
 }

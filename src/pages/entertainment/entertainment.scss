@@ -4,6 +4,29 @@ page-entertainment {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    // background-attachment: fixed;
+  }
+
+  .bg-img {
+    background-image: url("../assets/imgs/bg-i.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-attachment: fixed;
+    height: 100%;
+  }
+
+  .bg-img2 {
+    background-image: url("../assets/imgs/table.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    max-height: 400px;
+
+    position: relative;
+
   }
 
   .cheft-image {
@@ -17,51 +40,80 @@ page-entertainment {
 
 
       .res-enter-block-1 {
+        background-color: white; 
         .cheft-image {
           height: 100vh;
+          background-color: rgba($color: white, $alpha: 0.6)
+        }
 
           .cheft-text {
             left: 50%;
             top: 50%;
             min-width: 300px;
             transform: translate(-50%, -50%);
-
-            .description {
-              margin-top: 10px;
-            }
-
-            .delay {
-              animation-delay: 0.5s;
-            }
           }
-        }
 
-        .animated {
-          animation-duration: 1s;
-        }
+          .description {
+            margin:20px 20px;
+            color: black;
+          }
 
-        .teacher-text {
-          right: 10px;
-          top: 30%;
+          .delay {
+            animation-delay: 0.5s;
+          }
         }
       }
 
       .animated {
-        animation-duration: 2s;
+        animation-duration: 1s;
       }
-
-      .teacher-text {
-        right: 10px;
-        top: 30%;
-      }
-
     }
+
+    .animated {
+      animation-duration: 2s;
+    }
+
   }
-  .name-block{
-    color: #c8f737; 
-    // background-image: url("../assets/imgs/a.png");
-  }
-  .img-name{
-    background-image: url("../assets/imgs/a.png")
-  }
+
+
+.headline {
+  text-align: center;
+  margin-top: 60px;
+
 }
+
+.name-block {
+  color: #ad0202;
+  // background-image: url("../assets/imgs/a.png");
+}
+
+.img-name {
+  background-image: url("../assets/imgs/a.png")
+}
+.color-bg{
+  background-color: rgba($color: white, $alpha: 0.6)
+}
+// .bg-img-scroll{
+//   background-image: url("../assets/imgs/abc.jpg");
+//   height: 500px;
+//   background-attachment: fixed;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
+// .bg-img-scroll1{
+//   background-image: url("../assets/imgs/newyear.png");
+//   height: 500px;
+//   background-attachment: fixed;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }.bg-img-scroll2{
+//   background-image: url("../assets/imgs/noel.jpg");
+//   height: 500px;
+//   background-attachment: fixed;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
+

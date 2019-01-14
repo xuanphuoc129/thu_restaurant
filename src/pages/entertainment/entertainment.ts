@@ -21,7 +21,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class EntertainmentPage {
 
   imageUrl: string = "./assets/imgs/abc.jpg";
- 
+  imageUrl1: string = "./assets/imgs/newyear.png";
+  imageUrl2: string = "./assets/imgs/noel.jpg";
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

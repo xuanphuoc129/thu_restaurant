@@ -80,5 +80,7 @@ export class RestaurantCMD {
 	public static  REMOVE_VENDOR : string = "remove_vendor";
 	public static  UPDATE_VENDOR : string = "update_vendor";
 	public static  REMOVE_RESTAURANT_OUT_VENDOR : string = "remove_restaurant_out_vendor";
+
+	public static  GET_LIST_TABLE_IS_SERVE = "get_list_table_is_serve";
     constructor() { }
 }

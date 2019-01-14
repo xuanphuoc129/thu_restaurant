@@ -69,7 +69,7 @@ export class LoginPage {
     if(user.getRole() == 2){
       this.navCtrl.setRoot("ManaResPage");
     }else{
-      alert("Đăng nhập thành công");
+      this.navCtrl.setRoot("MapPage");
     }
   }
 

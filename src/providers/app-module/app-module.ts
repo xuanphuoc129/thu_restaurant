@@ -140,7 +140,7 @@ export class AppModuleProvider {
 
   public onJoinRoomSuccess() {
     RestaurantSFSConnector.getInstance().addListenerForExtensionResponse();
-    RestaurantSFSConnector.getInstance().addListener("AppControllerProvider", response => {
+    RestaurantSFSConnector.getInstance().addListener("AppModuleProvider", response => {
       this.onExtensionRespone(response);
     })
     RestaurantSFSConnector.getInstance().getRestaurantOfUser();
@@ -165,6 +165,8 @@ export class AppModuleProvider {
         RestaurantManager.getInstance().setAreas(dataBase);
       } else if (cmd == RestaurantCMD.GET_LIST_TABLE_IN_RESTAURANT) {
         RestaurantManager.getInstance().setTables(dataBase);
+      } else if (cmd == RestaurantCMD.GET_LIST_TABLE_IS_SERVE) {
+        RestaurantManager.getInstance().onMergeTable(dataBase);
       }
     } else {
       this.showToast(params.getUtfString(Paramskey.MESSAGE));
@@ -178,7 +180,7 @@ export class AppModuleProvider {
     RestaurantSFSConnector.getInstance().getListTableOfRestaurant(this.mRestaurantOfUser[0].getRestaurant_id());
     RestaurantSFSConnector.getInstance().getListAreaOfRestaurant(this.mRestaurantOfUser[0].getRestaurant_id());
     RestaurantSFSConnector.getInstance().getListFloorOfRestaurant(this.mRestaurantOfUser[0].getRestaurant_id());
-
+    RestaurantSFSConnector.getInstance().getListTableIsServeOfRestaurant(this.mRestaurantOfUser[0].getRestaurant_id());
   }
 
   public onResponeAppConfig(data) {

@@ -71,6 +71,21 @@ export class RestaurantManager {
         return new Categories();
     }
 
+    public onMergeTable(tables : Array<Tables>){
+        console.log("table...",tables);
+        
+        tables.forEach(element => {
+            let index = this.mTables.findIndex(e=>{
+                return e.getTable_id() == element.getTable_id();
+            });
+
+            if(index > -1){
+                element.setStatus(3);
+            }
+        });
+    }
+
+
     public getFloors() {
         return this.mFloors;
     }

@@ -1,0 +1,48 @@
+page-map {
+  .add-btn{
+    background-color: map-get($map: $colors, $key: green);
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba($color: map-get($map: $colors, $key: green), $alpha: .16);
+    color: white;
+    min-width: 120px;
+  }
+  .body-container-map{
+    padding: 20px;
+  }
+  .floor-name{
+    padding: 12px 10px;
+    background-color: map-get($map: $colors, $key: orange);
+    color: white;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .table-title{
+    color: #222;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 12px 5px;
+
+  }
+  .table-item{
+    border: 1px solid map-get($map: $colors, $key: gray);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    background: white;
+    color: #222;
+    font-weight: bold;
+    &.isHaveOrder{
+      background: green;
+      color: white;
+    }
+  }
+  .table-item:hover{
+    background: red;
+    color: white;
+    border: none;
+  }
+  .floor-model-container{
+    padding-bottom: 20px;
+  }
+}

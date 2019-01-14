@@ -331,6 +331,13 @@ export class RestaurantSFSConnector extends SFSConnector {
         this.send(this.cmd,params);
     }
 
+    public getListTableIsServeOfRestaurant(restaurant_id: number){
+        let params = new SFS2X.SFSObject();
+        params.putUtfString(Paramskey.CMD, RestaurantCMD.GET_LIST_TABLE_IS_SERVE);
+        params.putInt(Paramskey.RESTAURANT_ID,restaurant_id);
+        this.send(this.cmd,params);
+    }
+
     public createOrder(order : Orders){
         let params = new SFS2X.SFSObject();
         params.putUtfString(Paramskey.CMD, RestaurantCMD.CREATE_ORDER);

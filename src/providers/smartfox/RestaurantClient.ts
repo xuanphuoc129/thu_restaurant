@@ -4,6 +4,7 @@ import { RestaurantOfUser } from "../class/RestaurantOfUser";
 import { Restaurants } from "../class/Restaurant";
 import { Users } from "../class/Users";
 import { Vendors } from "../class/Vendors";
+import { Products } from "../class/Products";
 
 export class RestaurantClient extends SfsClientBaseExtension{
     public static _instance : RestaurantClient = null;
@@ -35,6 +36,30 @@ export class RestaurantClient extends SfsClientBaseExtension{
         else if(cmd == RestaurantCMD.GET_VENDOR_LIST){
             return this.onParseGetListVendor(params);
         }
+        else if(cmd == RestaurantCMD.GET_PRODUCT_IN_RESTAURANT){
+            return this.onParseGET_PRODUCT_IN_RESTAURANT(params);
+        }
+        else if(cmd == RestaurantCMD.CREATE_ORDER){
+            return this.doParseInfo(params);
+        }
+        else if(cmd == RestaurantCMD.ADD_PRODUCT_INTO_ORDER){
+            return params;
+        }
+    }
+
+    public onParseGET_PRODUCT_IN_RESTAURANT(params){
+        let data = this.doParseArrayExtensions(params);
+        let array = data.array;
+        let res = [];
+        if(array){
+            for(let i = 0;i < array.size(); i++){
+                let sfs = array.getSFSObject(i);
+                let newRes = new Products();
+                newRes.fromSFSObject(sfs);
+                res.push(newRes);
+            }
+        }
+        return res;
     }
 
     public onParseGetListVendor(params){

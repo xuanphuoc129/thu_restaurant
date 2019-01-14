@@ -15,12 +15,25 @@ export class Orders {
     private time_created : number = -1;
     private time_payment : number = -1;
 
-    private number_customer: number = -1;
+    private number_customer: number = 1;
     private mTable: Tables = new Tables();
 
     private time_serve: number = -1;
 
+    private  customer_name = "";
+	private  customer_address = "";
+	private  customer_phone = "";
+    private note: string = "";
+
     constructor() { }
+
+    public  setNote( note) {
+		this.note = note;
+    }
+    
+    public  getNote() {
+		return this.note;
+	}
 
     public getNumber_customer() {
 		return this.number_customer;
@@ -30,6 +43,29 @@ export class Orders {
 		this.number_customer = number_customer;
 	}
 
+    public  getCustomer_name() {
+		return this.customer_name;
+	}
+
+	public  setCustomer_name( customer_name) {
+		this.customer_name = customer_name;
+	}
+
+	public  getCustomer_address() {
+		return this.customer_address;
+	}
+
+	public  setCustomer_address( customer_address) {
+		this.customer_address = customer_address;
+	}
+
+	public  getCustomer_phone() {
+		return this.customer_phone;
+	}
+
+	public  setCustomer_phone( customer_phone) {
+		this.customer_phone = customer_phone;
+	}
 
     public  toSFSObject(o) {
 		o.putInt(Paramskey.RESTAURANT_ID, this.getRestaurant_id());
@@ -44,6 +80,10 @@ export class Orders {
 		o.putLong(Paramskey.TIME_CREATED, this.getTime_created());
         o.putLong(Paramskey.TIME_PAYMENT, this.getTime_payment());
         o.putInt(Paramskey.NUMBER_CUSTOMER, this.getNumber_customer());
+        o.putUtfString(Paramskey.CUSTOMER_NAME, this.getCustomer_name());
+		o.putUtfString(Paramskey.CUSTOMER_ADDRESS, this.getCustomer_address());
+        o.putUtfString(Paramskey.CUSTOMER_PHONE, this.getCustomer_phone());
+        o.putUtfString(Paramskey.NOTE, this.getNote());
 		return o;
 	}
 
@@ -84,6 +124,18 @@ export class Orders {
         if (o.containsKey(Paramskey.TIME_PAYMENT)) {
             this.setTime_payment(o.getLong(Paramskey.TIME_PAYMENT));
         }
+        if(o.containsKey(Paramskey.CUSTOMER_NAME)) {
+			this.setCustomer_name(o.getUtfString(Paramskey.CUSTOMER_NAME));
+		}
+		if(o.containsKey(Paramskey.CUSTOMER_ADDRESS)) {
+			this.setCustomer_address(o.getUtfString(Paramskey.CUSTOMER_ADDRESS));
+		}
+		if(o.containsKey(Paramskey.CUSTOMER_PHONE)) {
+			this.setCustomer_phone(o.getUtfString(Paramskey.CUSTOMER_PHONE));
+        }
+        if(o.containsKey(Paramskey.NOTE)) {
+			this.setNote(o.getUtfString(Paramskey.NOTE));
+		}
     }
 
     public getOrder_id() {

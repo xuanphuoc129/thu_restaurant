@@ -1,5 +1,122 @@
 page-order-popup {
-.list-input{
+  .list-input {
     padding: 0 30px;
-}
+  }
+
+  .a3-container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-container {
+    padding: 16px;
+    text-align: center;
+    border: 1px solid lightgray;
+
+    .quantity {
+      padding: 8px 16px;
+      text-align: center;
+      margin: 0 6px;
+      border: 1px solid lightgray;
+    }
+
+    .image-container {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      margin: 16px auto;
+      border: 1px solid lightgray;
+
+    }
+
+    .product-name {
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: black;
+    }
+
+    .subtitle {
+      margin-top: 8px;
+      color: gray;
+      font-size: 1.1rem;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 20px;
+
+      .button {
+        background: map-get($map: $colors, $key: danger);
+        border-radius: 5px;
+        font-size: 1rem;
+        min-width: 36px;
+      }
+    }
+  }
+
+
+  .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+  .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    box-shadow: none;
+  }
+
+  .item-md.item-block .item-inner {
+    border-bottom: none;
+  }
+
+  .item-md.item-input.item-input-has-focus .item-inner,
+  .item-md.item-input.input-has-focus .item-inner {
+
+    border-radius: 5px;
+    box-shadow: none;
+  }
+
+  .item-ios.item-input.item-input-has-focus .item-inner,
+  .item-ios.item-input.input-has-focus .item-inner {
+    border-radius: 5px;
+    box-shadow: none;
+  }
+
+  .text-input {
+    padding-left: 0px !important;
+    color: #8e6097;
+    font-size: 1.4rem;
+    margin: 13px 0 !important;
+  }
+
+  ion-label {
+    font-size: 1.4rem;
+  }
+
+  .item {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgba($color: #8e6097, $alpha: .2);
+  }
+
+  .container {
+    max-width: 500px;
+    margin: auto;
+    padding-top: 32px;
+
+    padding: 16px;
+    min-height: 100%;
+  }
+
+  .btn-save-bottom {
+    text-align: center;
+    margin-top: 20px;
+
+    .button {
+      background: map-get($map: $colors, $key: green);
+      border-radius: 5px;
+      min-width: 120px;
+    }
+  }
+
+  ion-content.content {
+    background: map-get($map: $colors, $key: light);
+  }
 }

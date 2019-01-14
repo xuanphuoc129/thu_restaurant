@@ -1,15 +1,37 @@
-
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Đặt Hàng</ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-buttons right>
+      <button ion-button icon-only navPop>
+        <ion-icon name="close-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>Đặt hàng</ion-title>
+  </ion-toolbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <ion-list class="list-input">
+
+  <div class="container" [hidden]="!isInput">
+    <ion-item>
+      <ion-input type="text" placeholder="Tên" [(ngModel)]="mOrder.customer_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Địa chỉ" [(ngModel)]="mOrder.customer_address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" placeholder="Số điện thoại" [(ngModel)]="mOrder.customer_phone"></ion-input>
+    </ion-item>
+
+    <div class="btn-save-bottom">
+      <button ion-button (click)="onClickSend()">Gửi đơn hàng</button>
+    </div>
+  </div>
+
+  <!-- <ion-list class="list-input">
     <ion-item>
       <ion-label color="dark">Tên </ion-label>
       <ion-input placeholder="Text-Input"></ion-input>
@@ -25,6 +47,37 @@
     <div class="btn-send">
       <button ion-button icon-bottom (click)="onClicksend()" class="btn-send"> Gửi </button>
     </div>
-  </ion-list>
+  </ion-list> -->
+
+  <ion-row [hidden]="isInput">
+    <ion-col col-4 *ngFor="let item of _mProducts">
+      <div class="product-container">
+        <div class="a3-container-center image-container">
+          <ion-icon name="image"></ion-icon>
+        </div>
+        <div class="product-name">{{item.product.name}}</div>
+        <div class="subtitle">{{item.product.price | number}} * {{item.product.unit}}</div>
+
+        <div class="btn-container">
+          <div class="a3-container-center" [hidden]="item.quantity == 0">
+            <button ion-button icon-only (click)="onClickRemoveItem(item)">
+              <ion-icon name="remove"></ion-icon>
+            </button>
+            <div class="quantity">{{item.quantity}}</div>
+            <button ion-button icon-only (click)="onClickAddItem(item)">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </div>
+          <button ion-button [hidden]="item.quantity > 0" (click)="onClickAdd(item)">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-fab bottom right [hidden]="mProductSelected.length == 0 || isInput">
+    <button ion-fab (click)="onClickContinue()">
+      <ion-icon name="arrow-forward"></ion-icon>
+    </button>
+  </ion-fab>
 
 </ion-content>

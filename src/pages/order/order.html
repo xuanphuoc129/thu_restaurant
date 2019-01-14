@@ -3,55 +3,52 @@
 
   <div class="order">
     <div class="form-container animated slideInDown">
-        <div class="title-order">Đặt Bàn</div>
+      <div class="title-order">Đặt Bàn</div>
 
-        <ion-item >
-          <ion-label >Tên</ion-label>
-          <ion-input ></ion-input>
-        </ion-item>
-        <ion-item >
-          <ion-label > Số điện thoại </ion-label>
-          <ion-input></ion-input>
-        </ion-item>
-        <ion-item >
-          <ion-label >Ngày đặt bàn</ion-label>
-          <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="mDate" min="2019" max="2019"></ion-datetime>
-        </ion-item>
-        <ion-item >
-          <ion-label >Thời gian</ion-label>
-          <ion-select [(ngModel)]="mTime">
-            <ion-option value="07:00">07:00</ion-option>
-            <ion-option value="08:00">08:00</ion-option>
-            <ion-option value="09:00">09:00</ion-option>
-            <ion-option value="10:00">10:00</ion-option>
-            <ion-option value="11:00">11:00</ion-option>
-            <ion-option value="12:00">12:00</ion-option>
-            <ion-option value="13:00">13:00</ion-option>
-            <ion-option value="14:00">14:00</ion-option>
-            <ion-option value="15:00">15:00</ion-option>
-            <ion-option value="16:00">16:00</ion-option>
-            <ion-option value="17:00">17:00</ion-option>
-            <ion-option value="18:00">18:00</ion-option>
-            <ion-option value="19:00">19:00</ion-option>
-            <ion-option value="20:00">20:00</ion-option>
-            <ion-option value="21:00">21:00</ion-option>
-          </ion-select>
-        </ion-item>
-        <ion-item >
-          <ion-label > Email </ion-label>
-          <ion-input ></ion-input>
-        </ion-item>
-        <ion-item >
-          <ion-label > Số người </ion-label>
-          <ion-input type="number" ></ion-input>
-        </ion-item>
-        <ion-item >
-          <ion-label > Ghi chú </ion-label>
-          <ion-input ></ion-input>
-        </ion-item>
-        <div class="btn-send">
-          <button ion-button icon-bottom (click)="onClicksend()" class="btn-send"> Gửi </button>
-        </div>
+      <ion-item>
+        <ion-label>Tên</ion-label>
+        <ion-input [(ngModel)]="mOrder.customer_name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label> Số điện thoại </ion-label>
+        <ion-input [(ngModel)]="mOrder.customer_phone"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Ngày đặt bàn</ion-label>
+        <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="mDate" min="2019" max="2019"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Thời gian</ion-label>
+        <ion-select [(ngModel)]="mTime">
+          <ion-option value="07:00">07:00</ion-option>
+          <ion-option value="08:00">08:00</ion-option>
+          <ion-option value="09:00">09:00</ion-option>
+          <ion-option value="10:00">10:00</ion-option>
+          <ion-option value="11:00">11:00</ion-option>
+          <ion-option value="12:00">12:00</ion-option>
+          <ion-option value="13:00">13:00</ion-option>
+          <ion-option value="14:00">14:00</ion-option>
+          <ion-option value="15:00">15:00</ion-option>
+          <ion-option value="16:00">16:00</ion-option>
+          <ion-option value="17:00">17:00</ion-option>
+          <ion-option value="18:00">18:00</ion-option>
+          <ion-option value="19:00">19:00</ion-option>
+          <ion-option value="20:00">20:00</ion-option>
+          <ion-option value="21:00">21:00</ion-option>
+        </ion-select>
+      </ion-item>
+     
+      <ion-item>
+        <ion-label> Số người </ion-label>
+        <ion-input [(ngModel)]="mOrder.number_customer" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label> Ghi chú </ion-label>
+        <ion-input [(ngModel)]="mNote"></ion-input>
+      </ion-item>
+      <div class="btn-send">
+        <button ion-button icon-bottom (click)="onClicksend()" class="btn-send"> Gửi </button>
+      </div>
     </div>
   </div>
 

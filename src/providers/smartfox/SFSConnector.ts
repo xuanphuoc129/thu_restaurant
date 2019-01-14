@@ -10,6 +10,8 @@ import { Areas } from '../class/Areas';
 import { Categories } from '../class/Categories';
 import { Restaurants } from '../class/Restaurant';
 import { Vendors } from '../class/Vendors';
+import { Orders } from '../class/Orders';
+import { ProductInOrder } from '../class/ProductInOrder';
 
 
 var SFS2X = window['SFS2X'];
@@ -200,7 +202,7 @@ export class RestaurantSFSConnector extends SFSConnector {
 
         let params = new SFS2X.SFSObject();
         params.putUtfString(Paramskey.USERNAME, data.getUserName());
-        params.putUtfString(Paramskey.PASSWORD, data.getPassword());
+        params.putUtfString(Paramskey.PASSWORD, md5(data.getPassword()));
         params.putUtfString(Paramskey.CMD, RestaurantCMD.CREATE_ACCOUNT);
         this.send(this.cmd, params);
     }
@@ -294,4 +296,60 @@ export class RestaurantSFSConnector extends SFSConnector {
         params.putUtfString(Paramskey.CMD, RestaurantCMD.GET_VENDOR_LIST);
         this.send(this.cmd,params);
     }
+
+    public getListCategoryOfRestaurant(restaurant_id: number){
+        let params = new SFS2X.SFSObject();
+        params.putUtfString(Paramskey.CMD, RestaurantCMD.GET_LIST_CATEGORIES_IN_RESTAURANT);
+        params.putInt(Paramskey.RESTAURANT_ID,restaurant_id);
+        this.send(this.cmd,params);
+    }
+    public getListProductOfRestaurant(restaurant_id: number){
+        let params = new SFS2X.SFSObject();
+        params.putUtfString(Paramskey.CMD, RestaurantCMD.GET_PRODUCT_IN_RESTAURANT);
+        params.putInt(Paramskey.RESTAURANT_ID,restaurant_id);
+        this.send(this.cmd,params);
+    }
+
+    public getListFloorOfRestaurant(restaurant_id: number){
+        let params = new SFS2X.SFSObject();
+        params.putUtfString(Paramskey.CMD, RestaurantCMD.GET_LIST_FLOOR_IN_RESTAURANT);
+        params.putInt(Paramskey.RESTAURANT_ID,restaurant_id);
+        this.send(this.cmd,params);
+    }
+
+    public getListAreaOfRestaurant(restaurant_id: number){
+        let params = new SFS2X.SFSObject();
+        params.putUtfString(Paramskey.CMD, RestaurantCMD.GET_LIST_AREA_IN_RESTAURANT);
+        params.putInt(Paramskey.RESTAURANT_ID,restaurant_id);
+        this.send(this.cmd,params);
+    }
+
+    public getListTableOfRestaurant(restaurant_id: number){
+        let params = new SFS2X.SFSObject();
+        params.putUtfString(Paramskey.CMD, RestaurantCMD.GET_LIST_TABLE_IN_RESTAURANT);
+        params.putInt(Paramskey.RESTAURANT_ID,restaurant_id);
+        this.send(this.cmd,params);
+    }
+
+    public createOrder(order : Orders){
+        let params = new SFS2X.SFSObject();
+        params.putUtfString(Paramskey.CMD, RestaurantCMD.CREATE_ORDER);
+        params = order.toSFSObject(params);
+        this.send(this.cmd,params);
+    }
+
+    public addProductIntoOrder(products : Array<ProductInOrder>){
+        let params = new SFS2X.SFSObject();
+        params.putInt(Paramskey.ORDER_ID,products[0].getOrder_id());
+        params.putUtfString(Paramskey.CMD, RestaurantCMD.ADD_PRODUCT_INTO_ORDER);
+        let _array = new SFS2X.SFSArray();
+        products.forEach(element => {
+            let o = new SFS2X.SFSObject();
+            o = element.toSFSObject(o);
+            _array.addSFSObject(o);
+        });
+        params.putSFSArray(Paramskey.ARRAY,_array);
+        this.send(this.cmd,params);
+    }
+
 }

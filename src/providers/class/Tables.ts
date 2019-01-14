@@ -9,6 +9,7 @@ export class Tables {
     private restaurant_id: number = -1;
     private floor_name: string = "Tang";
 
+    private order_id : number = -1;
     constructor() { }
 
     public toSFSObject(o) {
@@ -18,10 +19,33 @@ export class Tables {
         o.putInt(Paramskey.STATUS, this.getStatus());
         o.putInt(Paramskey.FLOOR_ID, this.getFloor_id());
         o.putInt(Paramskey.RESTAURANT_ID, this.getRestaurant_id());
+        o.putInt(Paramskey.ORDER_ID, this.getOrder_id());
         return o;
     }
 
+    fromObject(table: Tables){
+        this.table_id = table.getTable_id();
+        this.name = table.getName();
+        this.capacity = table.getCapacity();
+        this.status = table.getStatus();
+        this.floor_id  = table.getFloor_id();
+        this.restaurant_id = table.getRestaurant_id();
+    }
+
+
+    public getOrder_id() {
+        return this.order_id;
+    }
+
+    public setOrder_id(order_id) {
+        this.order_id = order_id;
+    }
+
     public fromSFSObject(o) {
+        if (o.containsKey(Paramskey.ORDER_ID)) {
+            this.setOrder_id(o.getInt(Paramskey.ORDER_ID));
+        }
+
         if (o.containsKey(Paramskey.TABLE_ID)) {
             this.setTable_id(o.getInt(Paramskey.TABLE_ID));
         }

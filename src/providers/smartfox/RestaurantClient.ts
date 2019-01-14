@@ -8,6 +8,7 @@ import { Products } from "../class/Products";
 import { Floors } from "../class/Floors";
 import { Areas } from "../class/Areas";
 import { Tables } from "../class/Tables";
+import { ProductInOrder } from "../class/ProductInOrder";
 
 export class RestaurantClient extends SfsClientBaseExtension {
     public static _instance: RestaurantClient = null;
@@ -59,6 +60,25 @@ export class RestaurantClient extends SfsClientBaseExtension {
         else if (cmd == RestaurantCMD.GET_LIST_TABLE_IS_SERVE) {
             return this.onParseGET_LIST_TABLE_IN_RESTAURANT(params);
         }
+        else if(cmd == RestaurantCMD.GET_PRODUCT_IN_ORDER){
+            return this.doParseArrayExtensions(params);
+        }
+        else if(cmd == RestaurantCMD.GET_ORDER_INFO){
+            return this.doParseInfo(params);
+        }
+    }
+
+    public onParseProductInOrder(array){
+        let res = [];
+        if(array){
+            for(let i = 0;i < array.size(); i++){
+                let sfs = array.getSFSObject(i);
+                let newRes = new ProductInOrder();
+                newRes.fromSFSObject(sfs);
+                res.push(newRes);
+            }
+        }
+        return res;
     }
 
     public onParseGET_LIST_FLOOR_IN_RESTAURANT(params) {

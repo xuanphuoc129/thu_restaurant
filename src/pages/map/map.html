@@ -11,21 +11,13 @@
 </ion-header>
 <ion-content>
   <div class="body-container-map">
-    <div *ngFor="let item of mArrayFloorModels" class="floor-model-container">
-        <div class="floor-name" tappable>{{item.floor.name}}</div>
-        <ion-row>
-          <ion-col col-12 >
-            <div class="table-title">Bàn</div>
-            <ion-row align-items-center>
-              <ion-col col-2 *ngFor="let table of item.tables" (click)="onClickTable(table)" tappable>
-                <div class="table-item" [class.isHaveOrder]="table.status == 3">{{table.name}}</div>
-              </ion-col>
-            </ion-row>
-          </ion-col>
-        </ion-row>
-    </div>
-     
+    <ion-row align-items-center>
+      <ion-col col-2 *ngFor="let table of mTablesIsServe" (click)="onClickTable(table)" tappable>
+        <div class="table-item" [class.isHaveOrder]="table.status == 3">{{table.name}}</div>
+      </ion-col>
+    </ion-row>
+
   </div>
-  
+
 
 </ion-content>

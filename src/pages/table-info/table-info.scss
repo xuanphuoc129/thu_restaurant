@@ -1,3 +1,9 @@
 page-table-info {
-
+    .product-item{
+        padding: 10px;
+        border-bottom: .55px solid whitesmoke;
+    }
+    .product-item:last-child{
+        border-bottom: none;
+    }
 }

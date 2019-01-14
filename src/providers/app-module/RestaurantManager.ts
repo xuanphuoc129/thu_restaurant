@@ -75,9 +75,13 @@ export class RestaurantManager {
         console.log("table...",tables);
         
         tables.forEach(element => {
+            console.log(this.mTables);
+
             let index = this.mTables.findIndex(e=>{
                 return e.getTable_id() == element.getTable_id();
             });
+
+            
 
             if(index > -1){
                 element.setStatus(3);

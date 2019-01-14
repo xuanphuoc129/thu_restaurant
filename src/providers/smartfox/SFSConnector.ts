@@ -359,4 +359,18 @@ export class RestaurantSFSConnector extends SFSConnector {
         this.send(this.cmd,params);
     }
 
+    public getListProductInOrder(order_id : number){
+        let params = new SFS2X.SFSObject();
+        params.putUtfString(Paramskey.CMD, RestaurantCMD.GET_PRODUCT_IN_ORDER);
+        params.putInt(Paramskey.ORDER_ID,order_id);
+        this.send(this.cmd,params);
+    }
+
+    public getOrderInfo(order_id : number){
+        let params = new SFS2X.SFSObject();
+        params.putUtfString(Paramskey.CMD, RestaurantCMD.GET_ORDER_INFO);
+        params.putInt(Paramskey.ORDER_ID,order_id);
+        this.send(this.cmd,params);
+    }
+
 }

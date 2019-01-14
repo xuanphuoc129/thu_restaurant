@@ -27,6 +27,13 @@ export class Orders {
 
     constructor() { }
 
+    
+
+    public getTables(): Tables{
+        return this.mTable;
+    }
+
+
     public  setNote( note) {
 		this.note = note;
     }

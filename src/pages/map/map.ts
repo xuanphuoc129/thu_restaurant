@@ -10,6 +10,7 @@ import { Paramskey } from '../../providers/smartfox/Paramkeys';
 import { RestaurantManager } from '../../providers/app-module/RestaurantManager';
 import { AppModuleProvider } from '../../providers/app-module/app-module';
 import { HomePage } from '../home/home';
+import { t } from '@angular/core/src/render3';
 
 /**
  * Generated class for the MapPage page.
@@ -39,6 +40,10 @@ export class MapPage {
 
   mArrayFloorModels: Array<FloorModels> = [];
 
+  mTables: Array<Tables> = [];
+  mTablesIsServe: Array<Tables> = [];
+  tables: Array<Tables> = [];
+
   constructor(
     public mActionSheet: ActionSheetController,
     public mAppModule: AppModuleProvider,
@@ -51,25 +56,15 @@ export class MapPage {
   }
 
   onLoadData() {
-    let floors = RestaurantManager.getInstance().getFloors();
-    let areas = RestaurantManager.getInstance().getAreas();
-    let tables = RestaurantManager.getInstance().getTables();
-
-    this.mArrayFloorModels = [];
-    floors.forEach(element => {
-      this.mArrayFloorModels.push({
-        floor: element,
-        areas: areas.filter(area => {
-          return area.getFloor_id() == element.getFloor_id()
-        }),
-        tables: tables.filter(table => {
-          return table.getFloor_id() == element.getFloor_id()
-        })
-      })
-    });
+    if(this.mTables.length == 0 || this.mTablesIsServe.length == 0) return;
   }
 
   ionViewDidLoad() {
+    if(!this.mAppModule.isLogin){ 
+      this.navCtrl.setRoot(HomePage);
+      return;
+    }
+
     this.onLoadData();
     RestaurantSFSConnector.getInstance().addListener("MapPage", response => {
       this.onExtensions(response);
@@ -85,13 +80,12 @@ export class MapPage {
     let params = response.params;
 
     if (RestaurantClient.getInstance().doCheckStatusParams(params)) {
-      // let dataBase = RestaurantClient.getInstance().doBaseDataWithCMDParams(cmd,params);
-      if (cmd == RestaurantCMD.GET_LIST_FLOOR_IN_RESTAURANT) {
-        this.onLoadData();
-      } else if (cmd == RestaurantCMD.GET_LIST_AREA_IN_RESTAURANT) {
-        this.onLoadData();
-      } else if (cmd == RestaurantCMD.GET_LIST_TABLE_IN_RESTAURANT) {
-        this.onLoadData();
+      let dataBase = RestaurantClient.getInstance().doBaseDataWithCMDParams(cmd,params);
+      if (cmd == RestaurantCMD.GET_LIST_TABLE_IN_RESTAURANT) {
+        this.mTables = dataBase;
+        
+      } else if (cmd == RestaurantCMD.GET_LIST_TABLE_IS_SERVE) {
+        this.mTablesIsServe = dataBase;
       }
     } else {
       this.mAppModule.showToast(params.getUtfString(Paramskey.MESSAGE));
@@ -100,11 +94,24 @@ export class MapPage {
 
  
   onClickTable(table: Tables) {
-    this.mAppModule.showModal("FloorTableAreaInfoPage", { mode: 3, id: table.getTable_id() }, (id) => {
-      if (id) {
-        RestaurantSFSConnector.getInstance().getListTableOfRestaurant(this.mAppModule.getRestaurantOfUser().getRestaurant_id());
-      }
+    let mAlert = this.mAppModule.mAlertController.create();
+    mAlert.setTitle("Thông báo");
+    mAlert.addInput({
+      placeholder: "Nhập mã bàn ăn",
+      name: "mk"
     });
+    mAlert.addButton({
+      text: "Ok",
+      handler: data=>{
+        let pass = data.mk;
+        if(pass && parseInt(pass) == table.getTable_id()){
+          this.mAppModule.showModal("TableInfoPage",{id: table.getOrder_id()});
+        }else{
+          alert("Sai mật mã");
+        }
+      }
+    })
+    mAlert.present();
   }
   
 

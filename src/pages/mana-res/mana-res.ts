@@ -67,6 +67,15 @@ export class ManaResPage {
       }
     });
   }
+  onClickRes(){
+    this.mAppModuel.showModal("CreateFixPage",null,(data)=>{
+      if(data){
+        RestaurantSFSConnector.getInstance().getListRestaurant();
+      }
+    })
+  }
+
+  }
 
 
 }

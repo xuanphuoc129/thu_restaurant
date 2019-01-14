@@ -6,4 +6,22 @@ page-table-info {
     .product-item:last-child{
         border-bottom: none;
     }
+
+    .order-total-money{
+        color: orange;
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-left: 10px;
+    }
+    .gray-color{
+        color: gray;
+    }
+
+    .order-name{
+        padding: 16px;
+        font-weight: bold;
+    }
+    .m-title{
+        padding: 16px;
+    }
 }

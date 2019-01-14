@@ -105,7 +105,7 @@ export class MapPage {
       handler: data=>{
         let pass = data.mk;
         if(pass && parseInt(pass) == table.getTable_id()){
-          this.mAppModule.showModal("TableInfoPage",{id: table.getOrder_id()});
+          this.mAppModule.showModal("TableInfoPage",{id: table.getOrder_id(), table: table.getName()});
         }else{
           alert("Sai mật mã");
         }

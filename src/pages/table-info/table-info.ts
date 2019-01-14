@@ -24,12 +24,16 @@ export class TableInfoPage {
 
   mOrder: Orders = new Orders();
   products: Array<ProductInOrder> = [];
-  
+  table_name : string = "";
+
   constructor(
     public mAppModule: AppModuleProvider,
     public navCtrl: NavController, public navParams: NavParams) {
     if (this.navParams.data["id"]) {
       this.mOrder.setOrder_id(this.navParams.get("id"));
+    }
+    if (this.navParams.data["table"]) {
+      this.table_name = this.navParams.get("table");
     }
   }
 
